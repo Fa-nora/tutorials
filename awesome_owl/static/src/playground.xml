@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="awesome_owl.Playground">
-        <div class="o_playground p-3">
-            <h2>Playground</h2>
+        <div class="p-3">
             <Counter/>
             <Counter/>
-            <hr/>
-            <div>
-                <Card title="'card 1'" content="'content of card 1'"/>
-                <Card title="'card 2'" content="'content of card 2'"/>
-            </div>
+
+            <Card title="'Odoo'" content="'A great framework'"/>
+
+            <Card title="'Markuped'" content="this.html"/>
+
+
+            <Card title="'Plain text'" content="this.plainText"/>
         </div>
     </t>
 </templates>
