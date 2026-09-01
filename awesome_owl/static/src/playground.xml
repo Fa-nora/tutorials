@@ -5,6 +5,11 @@
             <h2>Playground</h2>
             <Counter/>
             <Counter/>
+            <hr/>
+            <div>
+                <Card title="'card 1'" content="'content of card 1'"/>
+                <Card title="'card 2'" content="'content of card 2'"/>
+            </div>
         </div>
     </t>
 </templates>
