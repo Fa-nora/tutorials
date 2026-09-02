@@ -3,15 +3,13 @@
         <div class="p-3">
             <Counter onChange.bind="incrementSum"/>
             <Counter onChange.bind="incrementSum"/>
-	        <div class="mt_3 front_weight_bold">
-		        The sum is:<t t_esc="this.state.sum"/>
-	        </div>
+
+            <div class="mt-3 font-weight-bold">
+                The sum is: <t t-esc="this.state.sum"/>
+            </div>
 
             <Card title="'Odoo'" content="'A great framework'"/>
-
             <Card title="'Markuped'" content="this.html"/>
-
-
             <Card title="'Plain text'" content="this.plainText"/>
         </div>
     </t>

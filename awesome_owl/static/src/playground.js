@@ -9,7 +9,7 @@ export class Playground extends Component {
     static components = { Counter, Card };
 
     setup() {
-        this.state = useState({ value: 0 });
+        this.state = useState({ value: 2});
         this.html = markup("<div><b>Bold</b> html content</div>");
         this.plainText = "<div>this will show as plain text</div>";
     }
