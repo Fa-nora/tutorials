@@ -1,8 +1,11 @@
 <templates xml:space="preserve">
     <t t-name="awesome_owl.Playground">
         <div class="p-3">
-            <Counter/>
-            <Counter/>
+            <Counter onChange.bind="incrementSum"/>
+            <Counter onChange.bind="incrementSum"/>
+	        <div class="mt_3 front_weight_bold">
+		        The sum is:<t t_esc="this.state.sum"/>
+	        </div>
 
             <Card title="'Odoo'" content="'A great framework'"/>
 
