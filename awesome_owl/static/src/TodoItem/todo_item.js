@@ -8,6 +8,10 @@ export class TodoItem extends Component {
     onChange() {
         this.props.toggleState(this.props.todo.id);
     }
+
+    remove() {
+        this.props.removeTodo(this.props.todo.id);
+    }
 }
 
 TodoItem.props = {
@@ -20,4 +24,5 @@ TodoItem.props = {
         },
     },
     toggleState: Function,
+    removeTodo: Function,
 };
