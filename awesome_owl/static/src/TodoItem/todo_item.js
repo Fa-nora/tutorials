@@ -3,7 +3,11 @@
 import { Component } from "@odoo/owl";
 
 export class TodoItem extends Component {
-    static template ="awesome_owl.TodoItem";
+    static template = "awesome_owl.TodoItem";
+
+    onChange() {
+        this.props.toggleState(this.props.todo.id);
+    }
 }
 
 TodoItem.props = {
@@ -15,4 +19,5 @@ TodoItem.props = {
             isCompleted: Boolean,
         },
     },
+    toggleState: Function,
 };

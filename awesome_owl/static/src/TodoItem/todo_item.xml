@@ -1,7 +1,17 @@
 <templates xml:space="preserve">
     <t t-name="awesome_owl.TodoItem">
-        <div class="border p-2 my-1 rounded" t-att-class="props.todo.isCompleted ? 'text-muted text-decoration-line-through' : ''">
-            <t t-esc="props.todo.id"/> - <t t-esc="props.todo.description"/>
+        <div
+            class="border p-2 my-1 rounded"
+            t-att-class="props.todo.isCompleted ? 'text-muted text-decoration-line-through' : ''"
+        >
+            <input
+                type="checkbox"
+                t-att-checked="props.todo.isCompleted"
+                t-on-change="onChange"
+            />
+
+            <t t-esc="props.todo.id"/> -
+            <t t-esc="props.todo.description"/>
         </div>
     </t>
 </templates>
