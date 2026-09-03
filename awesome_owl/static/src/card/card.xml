@@ -7,10 +7,9 @@
                 </h5>
 
                 <p class="card-text">
-                    <t t-out="props.content"/>
+                    <t t-slot="default"/>
                 </p>
             </div>
         </div>
     </t>
 </templates>
-

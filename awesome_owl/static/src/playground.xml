@@ -8,9 +8,17 @@
                 The sum is: <t t-esc="this.state.sum"/>
             </div>
 
-            <Card title="'Odoo'" content="'A great framework'"/>
-            <Card title="'Markuped'" content="this.html"/>
-            <Card title="'Plain text'" content="this.plainText"/>
+            <Card title="'Odoo'">
+                <p>A great framework</p>
+            </Card>
+
+            <Card title="'Counter'">
+                <Counter/>
+            </Card>
+
+            <Card title="'Another Card'">
+                <p>This is arbitrary content.</p>
+            </Card>
 
             <TodoList/>
         </div>
