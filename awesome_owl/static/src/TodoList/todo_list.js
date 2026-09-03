@@ -7,10 +7,26 @@ export class TodoList extends Component {
     static template = "awesome_owl.TodoList";
     static components = { TodoItem };
 
-   setup() {
-    this.todos = useState([
-        { id: 1, description: "buy milk", isCompleted: false },
-        { id: 2, description: "write tutorial", isCompleted: true },
-    ]);
-}
+    setup() {
+        this.todos = useState([]);
+        this.nextId = 1;
+    }
+
+    addTodo(ev) {
+        if (ev.keyCode === 13) {
+            const description = ev.target.value;
+
+            if (!description) {
+                return;
+            }
+
+            this.todos.push({
+                id: this.nextId++,
+                description: description,
+                isCompleted: false,
+            });
+
+            ev.target.value = "";
+        }
+    }
 }

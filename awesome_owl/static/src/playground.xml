@@ -11,6 +11,8 @@
             <Card title="'Odoo'" content="'A great framework'"/>
             <Card title="'Markuped'" content="this.html"/>
             <Card title="'Plain text'" content="this.plainText"/>
+
+            <TodoList/>
         </div>
     </t>
 </templates>
