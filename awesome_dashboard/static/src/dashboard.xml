@@ -1,12 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
-	<t t-name="awesome_dashboard.AwesomeDashboard">
-	<layout display="{controlPanel:{}}" className="'o_dashboard h-100'">
-		<div class="p-3">
-			<h3>Dashboard</h3>
-			<p>some content</p>
-		</div>
-	</layout>
-    </t>
 
+    <t t-name="awesome_dashboard.AwesomeDashboard">
+
+        <Layout
+            display="{ controlPanel: {} }"
+            className="'o_dashboard h-100'"
+        >
+
+            <t t-set-slot="control-panel-create-button">
+                <button
+                    class="btn btn-primary"
+                    t-on-click="openCustomers"
+                >
+                    Customers
+                </button>
+
+                <button
+                    class="btn btn-secondary ms-2"
+                    t-on-click="openLeads"
+                >
+                    Leads
+                </button>
+            </t>
+
+            <div class="p-3">
+                <h1>Awesome Dashboard</h1>
+            </div>
+
+        </Layout>
+
+    </t>
 </templates>
