@@ -1,7 +1,9 @@
 <templates xml:space="preserve">
     <t t-name="awesome_dashboard.DashboardItem">
-        <div class="o_dashboard_item border bg-white p-3 m-2 shadow-sm rounded"
-             t-att-style="'width: ' + (18 * props.size) + 'rem;'">
+        <div
+            class="o_dashboard_item border bg-white p-3 m-2 shadow-sm rounded"
+            t-att-style="'width: ' + (18 * props.size) + 'rem;'"
+        >
             <t t-slot="default"/>
         </div>
     </t>
