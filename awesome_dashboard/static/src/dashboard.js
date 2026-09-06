@@ -5,15 +5,21 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
 import { DashboardItem } from "./DashboardItem/dashboard_item";
-import { rpc } from "@web/core/network/rpc";
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
-    static components = { Layout, DashboardItem };
+
+    static components = {
+        Layout,
+        DashboardItem,
+    };
 
     setup() {
         this.action = useService("action");
 
+        this.statisticsService = useService(
+            "awesome_dashboard.statistics"
+        );
 
         this.statistics = useState({
             average_amount: 0,
@@ -24,7 +30,9 @@ class AwesomeDashboard extends Component {
         });
 
         onWillStart(async () => {
-            const result = await rpc("/awesome_dashboard/statistics");
+            const result =
+                await this.statisticsService.loadStatistics();
+
             Object.assign(this.statistics, result);
         });
     }
