@@ -19,6 +19,7 @@ class AwesomeDashboard extends Component {
     setup() {
         this.action = useService("action");
 
+
         const statisticsService = useService(
             "awesome_dashboard.statistics"
         );
