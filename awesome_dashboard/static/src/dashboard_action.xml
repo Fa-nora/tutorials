@@ -1,8 +1,5 @@
-<template xml:space="preserve">
-	<t t-name="awesome_dashboard.DashboardAction">
-		<LazyComponent
-		 bundle="'awesome_dashboard.dashboard'"
-            Component="'AwesomeDashboard'"
-		/>
-	</t>
-</template>
+<templates xml:space="preserve">
+    <t t-name="awesome_dashboard.DashboardAction">
+        <LazyComponent bundle="'awesome_dashboard.dashboard'" Component="'AwesomeDashboard'"/>
+    </t>
+</templates>

@@ -21,22 +21,15 @@
     'data': [
         'views/views.xml',
     ],
-    'assets': {
-        'web.assets_backend': [
-            'awesome_dashboard/static/src/dashboard_action.js',
-        ],
-        'awesome_dashboard.dashboard': [
-            'awesome_dashboard/static/src/dashboard/dashboard.js',
-            'awesome_dashboard/static/src/dashboard/dashboard.xml',
-            'awesome_dashboard/static/src/dashboard.scss',
-            'awesome_dashboard/static/src/dashboard/DashboardItem/dashboard_item.js',
-            'awesome_dashboard/static/src/dashboard/DashboardItem/dashboard_item.xml',
-            'awesome_dashboard/static/src/dashboard/PieChart/pie_chart.js',
-            'awesome_dashboard/static/src/dashboard/PieChart/pie_chart.xml',
-            'awesome_dashboard/static/src/statistics_service.js',
-            'awesome_dashboard/static/src/dashboard_action.xml',
-        ],
-    },
+	'assets': {
+		'web.assets_backend': [
+			'awesome_dashboard/static/src/dashboard_action.js',
+			'awesome_dashboard/static/src/dashboard_action.xml',
+		],
 
+		'awesome_dashboard.dashboard': [
+			'awesome_dashboard/static/src/dashboard/**/*',
+		],
+	},
     'license': 'AGPL-3'
 }
