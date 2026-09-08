@@ -1,51 +1,57 @@
 <templates xml:space="preserve">
     <t t-name="awesome_dashboard.AwesomeDashboard">
-        <Layout display="{ controlPanel: {} }" className="'o_dashboard h-100'">
+        <Layout
+            display="{ controlPanel: {} }"
+            className="'o_dashboard h-100'"
+        >
             <t t-set-slot="control-panel-create-button">
-                <button class="btn btn-primary" t-on-click="openCustomers">Customers</button>
-	            <button class="btn btn-secondary ms-2" t-on-click="openLeads">Leads</button>
+
+                <button
+                    class="btn btn-primary"
+                    t-on-click="openCustomers"
+                >
+                    Customers
+                </button>
+
+                <button
+                    class="btn btn-secondary ms-2"
+                    t-on-click="openLeads"
+                >
+                    Leads
+                </button>
+
+                <button
+                    class="btn btn-secondary ms-2"
+                    t-on-click="openSettings"
+                    title="Settings"
+                >
+                    ⚙️
+                </button>
+
             </t>
 
-	        <div class="p-3 d-flex flex-wrap">
+            <div class="p-3 d-flex flex-wrap">
 
-                <DashboardItem>
-                    <div>New Orders This Month</div>
-	                <h3><t t-esc="statistics.nb_new_orders"/></h3>
-                </DashboardItem>
+                <t
+                    t-foreach="displayedItems"
+                    t-as="item"
+                    t-key="item.id"
+                >
+                    <DashboardItem size="item.size || 1">
 
+                        <t
+                            t-set="itemProps"
+                            t-value="item.props(statistics)"
+                        />
 
-		        <DashboardItem size="2">
-                    <div>Total Amount of New Orders</div>
-			        <h3><t t-esc="statistics.total_amount"/></h3>
-                </DashboardItem>
+                        <t
+                            t-component="item.Component"
+                            t-props="itemProps"
+                        />
 
-		        <DashboardItem>
-                    <div>Average T-Shirts per Order</div>
-			        <h3><t t-esc="statistics.average_amount"/></h3>
-                </DashboardItem>
+                    </DashboardItem>
+                </t>
 
-		        <DashboardItem>
-                    <div>Cancelled Orders</div>
-			        <h3><t t-esc="statistics.nb_cancelled_orders"/></h3>
-                </DashboardItem>
-
-		        <DashboardItem size="2">
-                    <div>Average Processing Time (days)</div>
-			        <h3><t t-esc="statistics.average_time"/></h3>
-                </DashboardItem>
-		        <DashboardItem size="2">
-				    <div>T-Shirts Sold by Size</div>
-
-							        <PieChart
-									        data="{
-				            s: statistics.nb_s,
-				            m: statistics.nb_m,
-				            l: statistics.nb_l,
-				            xl: statistics.nb_xl,
-				            xxl: statistics.nb_xxl
-				        }"
-							        />
-				</DashboardItem>
             </div>
         </Layout>
     </t>
