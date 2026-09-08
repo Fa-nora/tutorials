@@ -1,11 +1,15 @@
 <templates xml:space="preserve">
+
     <t t-name="awesome_dashboard.AwesomeDashboard">
+
         <Layout
             display="{ controlPanel: {} }"
             className="'o_dashboard h-100'"
         >
+
             <t t-set-slot="control-panel-create-button">
 
+                <!-- دکمه Customers -->
                 <button
                     class="btn btn-primary"
                     t-on-click="openCustomers"
@@ -13,6 +17,7 @@
                     Customers
                 </button>
 
+                <!-- دکمه Leads -->
                 <button
                     class="btn btn-secondary ms-2"
                     t-on-click="openLeads"
@@ -20,6 +25,7 @@
                     Leads
                 </button>
 
+                <!-- دکمه Settings -->
                 <button
                     class="btn btn-secondary ms-2"
                     t-on-click="openSettings"
@@ -30,6 +36,7 @@
 
             </t>
 
+            <!-- نمایش کارت‌ها -->
             <div class="p-3 d-flex flex-wrap">
 
                 <t
@@ -37,11 +44,16 @@
                     t-as="item"
                     t-key="item.id"
                 >
-                    <DashboardItem size="item.size || 1">
 
+                    <DashboardItem
+                        size="item.size || 1"
+                    >
+
+                        <!--  اینجا باید getItemProps استفاده شود
+                             تا dashboard به item.props ارسال شود.-->
                         <t
                             t-set="itemProps"
-                            t-value="item.props(statistics)"
+                            t-value="getItemProps(item)"
                         />
 
                         <t
@@ -50,9 +62,13 @@
                         />
 
                     </DashboardItem>
+
                 </t>
 
             </div>
+
         </Layout>
+
     </t>
+
 </templates>

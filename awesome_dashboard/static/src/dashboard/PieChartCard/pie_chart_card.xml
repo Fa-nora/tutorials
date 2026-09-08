@@ -1,9 +1,18 @@
 <templates xml:space="preserve">
+
     <t t-name="awesome_dashboard.PieChartCard">
+
         <div>
+
             <div t-esc="props.title"/>
 
-            <PieChart data="props.data"/>
+            <PieChart
+                data="props.data"
+                onSectionClick="props.onSectionClick"
+            />
+
         </div>
+
     </t>
+
 </templates>

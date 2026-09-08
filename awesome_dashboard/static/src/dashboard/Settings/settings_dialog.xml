@@ -1,15 +1,25 @@
 <templates xml:space="preserve">
+
     <t t-name="awesome_dashboard.SettingsDialog">
+
         <Dialog title="'Dashboard Settings'">
+
             <div class="p-3">
-                <t t-foreach="props.items" t-as="item" t-key="item.id">
+
+                <t
+                    t-foreach="props.items"
+                    t-as="item"
+                    t-key="item.id"
+                >
+
                     <div class="form-check mb-2">
+
                         <input
                             type="checkbox"
                             class="form-check-input"
                             t-att-id="item.id"
                             t-att-checked="!state.uncheckedItems.includes(item.id)"
-                            t-on-change="() => toggleItem(item)"
+                            t-on-change="() => this.toggleItem(item)"
                         />
 
                         <label
@@ -18,14 +28,18 @@
                         >
                             <t t-esc="item.description"/>
                         </label>
+
                     </div>
+
                 </t>
+
             </div>
 
             <t t-set-slot="footer">
+
                 <button
                     class="btn btn-primary"
-                    t-on-click="applyChanges"
+                    t-on-click="this.applyChanges"
                 >
                     Apply
                 </button>
@@ -36,7 +50,11 @@
                 >
                     Cancel
                 </button>
+
             </t>
+
         </Dialog>
+
     </t>
+
 </templates>

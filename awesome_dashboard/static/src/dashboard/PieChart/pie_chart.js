@@ -1,19 +1,38 @@
 /** @odoo-module **/
 
-import { Component, onWillStart, onMounted, useRef } from "@odoo/owl";
+import {
+    Component,
+    onWillStart,
+    onMounted,
+    useRef,
+} from "@odoo/owl";
+
 import { loadJS } from "@web/core/assets";
 
 export class PieChart extends Component {
     static template = "awesome_dashboard.PieChart";
+
     static props = {
-        data: { type: Object, optional: true },
+        data: {
+            type: Object,
+            optional: true,
+        },
+
+
+        // تابعی که هنگام کلیک روی نمودار اجرا می‌شود
+        onSectionClick: {
+            type: Function,
+            optional: true,
+        },
     };
 
     setup() {
         this.canvas = useRef("canvas");
 
         onWillStart(async () => {
-            await loadJS("/web/static/lib/Chart/Chart.js");
+            await loadJS(
+                "/web/static/lib/Chart/Chart.js"
+            );
         });
 
         onMounted(() => {
@@ -22,11 +41,18 @@ export class PieChart extends Component {
     }
 
     renderChart() {
-		debugger
         new Chart(this.canvas.el, {
             type: "pie",
+
             data: {
-                labels: ["S", "M", "L", "XL", "XXL"],
+                labels: [
+                    "S",
+                    "M",
+                    "L",
+                    "XL",
+                    "XXL",
+                ],
+
                 datasets: [
                     {
                         data: [
@@ -38,6 +64,34 @@ export class PieChart extends Component {
                         ],
                     },
                 ],
+            },
+
+            
+            // تشخیص قسمتی که کاربر روی آن کلیک کرده
+            options: {
+                onClick: (event, elements) => {
+
+                    if (!elements.length) {
+                        return;
+                    }
+
+                    const index =
+                        elements[0].index;
+
+                    const sizes = [
+                        "S",
+                        "M",
+                        "L",
+                        "XL",
+                        "XXL",
+                    ];
+
+                    const size = sizes[index];
+
+                    this.props.onSectionClick?.(
+                        size
+                    );
+                },
             },
         });
     }

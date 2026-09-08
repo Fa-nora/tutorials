@@ -11,7 +11,19 @@ export class PieChartCard extends Component {
     };
 
     static props = {
-        title: { type: String },
-        data: { type: Object },
+        title: {
+            type: String,
+        },
+
+        data: {
+            type: Object,
+        },
+
+
+        // دریافت تابع کلیک
+        onSectionClick: {
+            type: Function,
+            optional: true,
+        },
     };
 }
