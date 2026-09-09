@@ -1,7 +1,8 @@
 /** @odoo-module **/
 
-import { reactive } from "@odoo/owl";
+import { reactive, useState } from "@odoo/owl";
 import { registry } from "@web/core/registry";
+import { useService } from "@web/core/utils/hooks";
 
 const state = reactive({
     clicks: 0,
@@ -23,3 +24,11 @@ registry.category("services").add(
     "awesome_clicker",
     clickerService
 );
+
+export function useClicker() {
+    const clicker = useService("awesome_clicker");
+    return {
+        ...clicker,
+        state: useState(clicker.state),
+    };
+}

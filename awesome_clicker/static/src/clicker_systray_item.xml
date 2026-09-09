@@ -8,7 +8,7 @@
                 class="btn btn-sm btn-primary o_clicker_counter"
                 t-on-click="() => clicker.increment(10)"
             >
-                Clicks: <t t-esc="state.clicks"/>
+                Clicks: <t t-esc="clicker.state.clicks"/>
             </button>
 
             <button

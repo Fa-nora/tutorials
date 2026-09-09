@@ -5,7 +5,7 @@
         <div class="p-4 text-center">
 
             <h1>
-                Clicks: <t t-esc="state.clicks"/>
+                Clicks: <t t-esc="clicker.state.clicks"/>
             </h1>
 
             <button
