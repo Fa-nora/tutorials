@@ -1,15 +1,14 @@
 /** @odoo-module **/
 
-import { reactive, useState } from "@odoo/owl";
+import { reactive } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-import { useService } from "@web/core/utils/hooks";
-
-const state = reactive({
-    clicks: 0,
-});
 
 const clickerService = {
     start() {
+        const state = reactive({
+            clicks: 0,
+        });
+
         return {
             state,
 
@@ -21,14 +20,6 @@ const clickerService = {
 };
 
 registry.category("services").add(
-    "awesome_clicker",
+    "awesome_clicker.clicker",
     clickerService
 );
-
-export function useClicker() {
-    const clicker = useService("awesome_clicker");
-    return {
-        ...clicker,
-        state: useState(clicker.state),
-    };
-}

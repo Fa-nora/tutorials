@@ -1,12 +1,21 @@
 /** @odoo-module **/
 
-import {Component, useExternalListener,} from "@odoo/owl";
+import {
+    Component,
+    useExternalListener,
+} from "@odoo/owl";
+
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
-import { useClicker } from "./clicker_service";
+import { useClicker } from "./clicker_hook";
+import { ClickValue } from "./ClickValue/click_value";
 
 export class ClickerSystrayItem extends Component {
     static template = "awesome_clicker.ClickerSystrayItem";
+
+    static components = {
+        ClickValue,
+    };
 
     setup() {
         this.clicker = useClicker();

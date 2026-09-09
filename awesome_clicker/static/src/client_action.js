@@ -2,18 +2,18 @@
 
 import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-
-import { useClicker } from "./clicker_service";
+import { useClicker } from "./clicker_hook";
+import { ClickValue } from "./ClickValue/click_value";
 
 export class ClickerClientAction extends Component {
     static template = "awesome_clicker.ClickerClientAction";
 
+    static components = {
+        ClickValue,
+    };
+
     setup() {
         this.clicker = useClicker();
-    }
-
-    increment() {
-        this.clicker.increment(10);
     }
 }
 

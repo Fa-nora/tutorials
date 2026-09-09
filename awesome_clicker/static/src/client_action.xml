@@ -2,17 +2,18 @@
 
     <t t-name="awesome_clicker.ClickerClientAction">
 
-        <div class="p-4 text-center">
+        <div class="p-4 d-flex align-items-center gap-3">
 
-            <h1>
-                Clicks: <t t-esc="clicker.state.clicks"/>
-            </h1>
+            <span>
+                Clicks:
+                <ClickValue value="clicker.state.clicks"/>
+            </span>
 
             <button
                 class="btn btn-primary"
-                t-on-click="increment"
+                t-on-click="() => clicker.increment(10)"
             >
-                +10
+                Increment
             </button>
 
         </div>
