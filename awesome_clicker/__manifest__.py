@@ -1,29 +1,29 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Awesome Clicker",
+	'name': "Awesome Clicker",
 
-    'summary': """
+	'summary': """
         Starting module for "Master the Odoo web framework, chapter 1: Build a Clicker game"
     """,
 
-    'description': """
-        Starting module for "Master the Odoo web framework, chapter 1: Build a Clicker game"
-    """,
+	'description': """
+	                       Starting module for "Master the Odoo web framework, chapter 1: Build a Clicker game"
+""",
 
-    'author': "Odoo",
-    'website': "https://www.odoo.com/",
-    'category': 'Tutorials',
-    'version': '0.1',
-    'application': True,
-    'installable': True,
-    'depends': ['base', 'web'],
+	'author': "Odoo",
+	'website': "https://www.odoo.com/",
+	'category': 'Tutorials',
+	'version': '0.1',
+	'application': True,
+	'installable': True,
+	'depends': ['base', 'web'],
 
-    'data': [],
-    'assets': {
-        'web.assets_backend': [
-            'awesome_clicker/static/src/**/*',
-        ],
-
-    },
-    'license': 'AGPL-3'
+	'data': [],
+	"assets": {
+		"web.assets_backend": [
+			"awesome_clicker/static/src/clicker_systray_item.js",
+			"awesome_clicker/static/src/clicker_systray_item.xml",
+		],
+	},
+	'license': 'AGPL-3'
 }

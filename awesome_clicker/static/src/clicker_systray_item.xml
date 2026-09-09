@@ -1,0 +1,18 @@
+<templates xml:space="preserve">
+
+    <t t-name="awesome_clicker.ClickerSystrayItem">
+
+        <div class="d-flex align-items-center gap-2 px-2">
+
+            <button
+                class="btn btn-sm btn-primary o_clicker_counter"
+                t-on-click="increment"
+            >
+                Clicks: <t t-esc="state.clicks"/>
+            </button>
+
+        </div>
+
+    </t>
+
+</templates>
