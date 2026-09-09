@@ -11,6 +11,13 @@
                 Clicks: <t t-esc="state.clicks"/>
             </button>
 
+            <button
+                class="btn btn-sm btn-secondary"
+                t-on-click="openClicker"
+            >
+                Open
+            </button>
+
         </div>
 
     </t>

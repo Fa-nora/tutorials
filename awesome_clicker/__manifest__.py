@@ -23,6 +23,8 @@
 		"web.assets_backend": [
 			"awesome_clicker/static/src/clicker_systray_item.js",
 			"awesome_clicker/static/src/clicker_systray_item.xml",
+			"awesome_clicker/static/src/client_action.js",
+			"awesome_clicker/static/src/client_action.xml",
 		],
 	},
 	'license': 'AGPL-3'
