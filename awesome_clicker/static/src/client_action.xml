@@ -1,9 +1,22 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_clicker.ClickerClientAction">
-        <div class="p-4">
-            <h1>Hello World!</h1>
+
+        <div class="p-4 text-center">
+
+            <h1>
+                Clicks: <t t-esc="state.clicks"/>
+            </h1>
+
+            <button
+                class="btn btn-primary"
+                t-on-click="increment"
+            >
+                +10
+            </button>
+
         </div>
+
     </t>
 
 </templates>
