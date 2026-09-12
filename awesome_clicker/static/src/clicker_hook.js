@@ -6,8 +6,5 @@ import { useState } from "@odoo/owl";
 export function useClicker() {
     const clicker = useService("awesome_clicker.clicker");
 
-    return {
-        state: useState(clicker.state),
-        increment: clicker.increment,
-    };
+    return useState(clicker);
 }

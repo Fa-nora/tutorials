@@ -9,7 +9,7 @@
                 t-on-click="() => clicker.increment(10)"
             >
                 Clicks:
-                <ClickValue value="clicker.state.clicks"/>
+                <ClickValue value="clicker.clicks"/>
             </button>
 
             <button

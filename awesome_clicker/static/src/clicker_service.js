@@ -1,21 +1,11 @@
 /** @odoo-module **/
 
-import { reactive } from "@odoo/owl";
 import { registry } from "@web/core/registry";
+import { ClickerModel } from "./clicker_model";
 
 const clickerService = {
     start() {
-        const state = reactive({
-            clicks: 0,
-        });
-
-        return {
-            state,
-
-            increment(inc) {
-                state.clicks += inc;
-            },
-        };
+        return new ClickerModel();
     },
 };
 
