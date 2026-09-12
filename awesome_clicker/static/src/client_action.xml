@@ -10,62 +10,85 @@
             </div>
 
             <button
-                class="btn btn-primary"
+                class="btn btn-primary my-2"
                 t-on-click="() => clicker.increment(10)"
             >
                 Increment
             </button>
 
-
-            <!-- ClickBots -->
-
-            <t t-if="clicker.level >= 1">
+            <!-- Bots -->
+            <t t-if="clicker.level gte 1">
 
                 <h2 class="mt-3">
                     Bots
                 </h2>
 
-                <div class="border rounded p-3">
+                <div class="d-flex gap-3">
 
-                    <div class="mb-3">
-                        <ClickValue value="clicker.clickBots"/>
-                          x ClickBots (10 clicks/10 seconds)
+                    <!-- ClickBot -->
+                    <div class="border rounded p-3 flex-grow-1">
+
+                        <div class="mb-3">
+                            <ClickValue value="clicker.clickBots"/>
+                            x clickbot (10 clicks/10seconds) 🤖
+                        </div>
+
+                        <button
+                            class="btn btn-primary"
+                            t-on-click="clicker.buyClickBot"
+                            t-att-disabled="clicker.clicks lt 500"
+                        >
+                            Buy clickbot (500 clicks)
+                        </button>
+
                     </div>
 
-                    <button
-                        class="btn btn-primary"
-                        t-on-click="clicker.buyClickBot"
-                        t-att-disabled="clicker.clicks &lt; 1000"
-                    >
-                        Buy ClickBot (1000 clicks)
-                    </button>
+                    <!-- BigBot -->
+                    <t t-if="clicker.level gte 2">
+
+                        <div class="border rounded p-3 flex-grow-1">
+
+                            <div class="mb-3">
+                                <ClickValue value="clicker.bigBots"/>
+                                x bigbot (100 clicks/10seconds) 🤖
+                            </div>
+
+                            <button
+                                class="btn btn-primary"
+                                t-on-click="clicker.buyBigBot"
+                                t-att-disabled="clicker.clicks lt 600"
+                            >
+                                Buy bigbot (600 clicks)
+                            </button>
+
+                        </div>
+
+                    </t>
 
                 </div>
 
             </t>
 
-
-            <!-- BigBots -->
-
-            <t t-if="clicker.level >= 2">
+            <!-- Power -->
+            <t t-if="clicker.level gte 3">
 
                 <h2 class="mt-3">
-                    BigBots
+                    Power
                 </h2>
 
                 <div class="border rounded p-3">
 
                     <div class="mb-3">
-                        <ClickValue value="clicker.bigBots"/>
-                        x BigBots (100 clicks/10 seconds)
+                        Power level:
+                        <ClickValue value="clicker.power"/>
                     </div>
 
                     <button
                         class="btn btn-primary"
-                        t-on-click="clicker.buyBigBot"
-                        t-att-disabled="clicker.clicks &lt; 5000"
+                        t-on-click="clicker.buyPower"
+                        t-att-disabled="clicker.clicks lt 900"
                     >
-                        Buy BigBot (5000 clicks)
+                        Buy power (900 clicks)
                     </button>
 
                 </div>
