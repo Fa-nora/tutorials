@@ -40,10 +40,12 @@ export const rewards = [
 export function getReward(clicker) {
     const availableRewards = rewards.filter((reward) => {
         const minLevel =
-            reward.minLevel === undefined || clicker.level >= reward.minLevel;
+            reward.minLevel === undefined ||
+            clicker.level >= reward.minLevel;
 
         const maxLevel =
-            reward.maxLevel === undefined || clicker.level <= reward.maxLevel;
+            reward.maxLevel === undefined ||
+            clicker.level <= reward.maxLevel;
 
         return minLevel && maxLevel;
     });

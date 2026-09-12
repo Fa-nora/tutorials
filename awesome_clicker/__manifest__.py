@@ -20,22 +20,24 @@
 
 	'data': [],
 	"assets": {
-		"web.assets_backend": [
-			"awesome_clicker/static/src/clicker_model.js",
-			"awesome_clicker/static/src/clicker_service.js",
-			"awesome_clicker/static/src/clicker_hook.js",
+    "web.assets_backend": [
+        "awesome_clicker/static/src/clicker_model.js",
+        "awesome_clicker/static/src/clicker_service.js",
+        "awesome_clicker/static/src/clicker_hook.js",
 
-			"awesome_clicker/static/src/ClickValue/click_value.js",
-			"awesome_clicker/static/src/ClickValue/click_value.xml",
+        "awesome_clicker/static/src/ClickValue/click_value.js",
+        "awesome_clicker/static/src/ClickValue/click_value.xml",
 
-			"awesome_clicker/static/src/clicker_systray_item.js",
-			"awesome_clicker/static/src/clicker_systray_item.xml",
+        "awesome_clicker/static/src/clicker_systray_item.js",
+        "awesome_clicker/static/src/clicker_systray_item.xml",
 
-			"awesome_clicker/static/src/client_action.js",
-			"awesome_clicker/static/src/client_action.xml",
-			"awesome_clicker/static/src/click_rewards.js",
-			"awesome_clicker/static/src/utils.js",
-		],
-	},
+        "awesome_clicker/static/src/client_action.js",
+        "awesome_clicker/static/src/client_action.xml",
+
+        "awesome_clicker/static/src/click_rewards.js",
+        "awesome_clicker/static/src/utils.js",
+        "awesome_clicker/static/src/form_controller.js",
+    ],
+},
 	'license': 'AGPL-3'
 }

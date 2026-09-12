@@ -3,6 +3,8 @@
 import { Reactive } from "@web/core/utils/reactive";
 import { EventBus } from "@odoo/owl";
 
+import { getReward } from "./click_rewards";
+
 export class ClickerModel extends Reactive {
     constructor() {
         super();
@@ -15,7 +17,6 @@ export class ClickerModel extends Reactive {
         this.clickBots = 0;
         this.bigBots = 0;
 
-        // Power starts at 1
         this.power = 1;
 
         setInterval(() => {
@@ -27,18 +28,15 @@ export class ClickerModel extends Reactive {
     increment(inc) {
         this.clicks += inc;
 
-        // Level 1
         if (this.clicks >= 100 && this.level < 1) {
             this.level = 1;
             this.bus.trigger("MILESTONE_1k");
         }
 
-        // Level 2
         if (this.clicks >= 400 && this.level < 2) {
             this.level = 2;
         }
 
-        // Level 3
         if (this.clicks >= 1000 && this.level < 3) {
             this.level = 3;
         }
@@ -63,5 +61,9 @@ export class ClickerModel extends Reactive {
             this.clicks -= 900;
             this.power += 1;
         }
+    }
+
+    getReward() {
+        return getReward(this);
     }
 }
