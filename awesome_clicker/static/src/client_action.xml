@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <templates xml:space="preserve">
 
     <t t-name="awesome_clicker.ClickerClientAction">
@@ -27,6 +29,10 @@
                 </h2>
 
                 <div class="border rounded p-3">
+
+                    <p>
+                        You can now buy ClickBots!
+                    </p>
 
                     <div class="mb-3">
                         <ClickValue value="clicker.clickBots"/>
