@@ -13,6 +13,6 @@ export class ClickValue extends Component {
     };
 
     get humanValue() {
-        return humanNumber(this.props.value);
+        return humanNumber(this.props.value, 1);
     }
 }
