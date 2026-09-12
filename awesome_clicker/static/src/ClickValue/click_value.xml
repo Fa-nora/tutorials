@@ -1,7 +1,9 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_clicker.ClickValue">
-        <t t-esc="humanValue"/>
+        <span t-att-data-tooltip="props.value">
+            <t t-esc="humanValue"/>
+        </span>
     </t>
 
 </templates>
