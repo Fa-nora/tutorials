@@ -36,7 +36,10 @@
 
         "awesome_clicker/static/src/click_rewards.js",
         "awesome_clicker/static/src/utils.js",
+
         "awesome_clicker/static/src/form_controller.js",
+
+        "awesome_clicker/static/src/clicker_commands.js",
     ],
 },
 	'license': 'AGPL-3'

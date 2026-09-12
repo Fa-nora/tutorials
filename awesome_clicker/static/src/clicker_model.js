@@ -19,10 +19,19 @@ export class ClickerModel extends Reactive {
 
         this.power = 1;
 
+        this.pearTrees = 0;
+        this.cherryTrees = 0;
+
+        this.pearFruits = 0;
+        this.cherryFruits = 0;
+
         setInterval(() => {
             this.clicks += this.clickBots * 10 * this.power;
             this.clicks += this.bigBots * 100 * this.power;
-        }, 10000);
+
+            this.pearFruits += this.pearTrees;
+            this.cherryFruits += this.cherryTrees;
+        }, 30000);
     }
 
     increment(inc) {
@@ -39,6 +48,10 @@ export class ClickerModel extends Reactive {
 
         if (this.clicks >= 1000 && this.level < 3) {
             this.level = 3;
+        }
+
+        if (this.clicks >= 1000000 && this.level < 4) {
+            this.level = 4;
         }
     }
 
@@ -61,6 +74,28 @@ export class ClickerModel extends Reactive {
             this.clicks -= 900;
             this.power += 1;
         }
+    }
+
+    buyPearTree() {
+        if (this.clicks >= 1000000 && this.level >= 4) {
+            this.clicks -= 1000000;
+            this.pearTrees += 1;
+        }
+    }
+
+    buyCherryTree() {
+        if (this.clicks >= 1000000 && this.level >= 4) {
+            this.clicks -= 1000000;
+            this.cherryTrees += 1;
+        }
+    }
+
+    get totalTrees() {
+        return this.pearTrees + this.cherryTrees;
+    }
+
+    get totalFruits() {
+        return this.pearFruits + this.cherryFruits;
     }
 
     getReward() {
