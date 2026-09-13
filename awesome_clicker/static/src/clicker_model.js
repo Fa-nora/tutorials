@@ -7,7 +7,7 @@ import { browser } from "@web/core/browser/browser";
 import { getReward } from "./click_rewards";
 
 const STORAGE_KEY = "awesome_clicker_state";
-const STATE_VERSION = 1;
+const STATE_VERSION = 2; // ارتقای نسخه به ۲
 
 export class ClickerModel extends Reactive {
     constructor(savedState = {}) {
@@ -29,13 +29,14 @@ export class ClickerModel extends Reactive {
         // Trees
         this.pearTrees = savedState.pearTrees ?? 0;
         this.cherryTrees = savedState.cherryTrees ?? 0;
+        this.peachTrees = savedState.peachTrees ?? 0; // اضافه شدن درخت هلو
 
         // Fruits
         this.pearFruits = savedState.pearFruits ?? 0;
         this.cherryFruits = savedState.cherryFruits ?? 0;
+        this.peachFruits = savedState.peachFruits ?? 0; // اضافه شدن میوه هلو
 
         // Every 10 seconds:
-        
         setInterval(() => {
             this.clicks +=
                 this.clickBots * 10 * this.power;
@@ -57,6 +58,7 @@ export class ClickerModel extends Reactive {
         setInterval(() => {
             this.pearFruits += this.pearTrees;
             this.cherryFruits += this.cherryTrees;
+            this.peachFruits += this.peachTrees; // تولید میوه هلو
         }, 30000);
     }
 
@@ -74,25 +76,24 @@ export class ClickerModel extends Reactive {
 
             pearTrees: this.pearTrees,
             cherryTrees: this.cherryTrees,
+            peachTrees: this.peachTrees,
 
             pearFruits: this.pearFruits,
             cherryFruits: this.cherryFruits,
+            peachFruits: this.peachFruits,
         };
     }
 
     updateLevel() {
-        // Level 1 -> 100 clicks
         if (this.clicks >= 100 && this.level < 1) {
             this.level = 1;
             this.bus.trigger("MILESTONE_1k");
         }
 
-        // Level 2 -> 500 clicks
         if (this.clicks >= 500 && this.level < 2) {
             this.level = 2;
         }
 
-        // Level 3 -> 900 clicks
         if (this.clicks >= 900 && this.level < 3) {
             this.level = 3;
         }
@@ -138,12 +139,19 @@ export class ClickerModel extends Reactive {
         }
     }
 
+    buyPeachTree() {
+        if (this.clicks >= 500 && this.level >= 3) {
+            this.clicks -= 500;
+            this.peachTrees += 1;
+        }
+    }
+
     get totalTrees() {
-        return this.pearTrees + this.cherryTrees;
+        return this.pearTrees + this.cherryTrees + this.peachTrees;
     }
 
     get totalFruits() {
-        return this.pearFruits + this.cherryFruits;
+        return this.pearFruits + this.cherryFruits + this.peachFruits;
     }
 
     getReward() {

@@ -6,9 +6,21 @@ import { browser } from "@web/core/browser/browser";
 import { ClickerModel } from "./clicker_model";
 
 const STORAGE_KEY = "awesome_clicker_state";
-const STATE_VERSION = 1;
+const STATE_VERSION = 2; // ارتقای نسخه به ۲
 
-const migrations = [];
+const migrations = [
+    {
+        fromVersion: 1,
+        toVersion: 2,
+        apply(state) {
+            return {
+                ...state,
+                peachTrees: 0,
+                peachFruits: 0,
+            };
+        },
+    },
+];
 
 const clickerService = {
     dependencies: ["effect", "notification", "action"],
@@ -23,8 +35,7 @@ const clickerService = {
         // Apply migrations
         while (state.version < STATE_VERSION) {
             const migration = migrations.find(
-                (migration) =>
-                    migration.fromVersion === state.version
+                (m) => m.fromVersion === state.version
             );
 
             if (!migration) {
