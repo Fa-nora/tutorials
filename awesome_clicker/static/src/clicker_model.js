@@ -7,6 +7,7 @@ import { browser } from "@web/core/browser/browser";
 import { getReward } from "./click_rewards";
 
 const STORAGE_KEY = "awesome_clicker_state";
+const STATE_VERSION = 1;
 
 export class ClickerModel extends Reactive {
     constructor(savedState = {}) {
@@ -34,7 +35,7 @@ export class ClickerModel extends Reactive {
         this.cherryFruits = savedState.cherryFruits ?? 0;
 
         // Every 10 seconds:
-
+        
         setInterval(() => {
             this.clicks +=
                 this.clickBots * 10 * this.power;
@@ -52,6 +53,7 @@ export class ClickerModel extends Reactive {
         }, 10000);
 
         // Every 30 seconds:
+        // Each tree produces one fruit
         setInterval(() => {
             this.pearFruits += this.pearTrees;
             this.cherryFruits += this.cherryTrees;
@@ -60,6 +62,8 @@ export class ClickerModel extends Reactive {
 
     getState() {
         return {
+            version: STATE_VERSION,
+
             clicks: this.clicks,
             level: this.level,
 

@@ -6,16 +6,36 @@ import { browser } from "@web/core/browser/browser";
 import { ClickerModel } from "./clicker_model";
 
 const STORAGE_KEY = "awesome_clicker_state";
+const STATE_VERSION = 1;
+
+const migrations = [];
 
 const clickerService = {
     dependencies: ["effect", "notification", "action"],
 
     start(env, { effect, notification, action }) {
-        const savedState = browser.localStorage.getItem(STORAGE_KEY);
+        let savedState = browser.localStorage.getItem(STORAGE_KEY);
 
-        const clicker = new ClickerModel(
-            savedState ? JSON.parse(savedState) : {}
-        );
+        let state = savedState
+            ? JSON.parse(savedState)
+            : {};
+
+        // Apply migrations
+        while (state.version < STATE_VERSION) {
+            const migration = migrations.find(
+                (migration) =>
+                    migration.fromVersion === state.version
+            );
+
+            if (!migration) {
+                break;
+            }
+
+            state = migration.apply(state);
+            state.version = migration.toVersion;
+        }
+
+        const clicker = new ClickerModel(state);
 
         clicker.bus.addEventListener("MILESTONE_1k", () => {
             effect.add({
