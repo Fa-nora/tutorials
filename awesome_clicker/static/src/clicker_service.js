@@ -1,13 +1,21 @@
 /** @odoo-module **/
 
 import { registry } from "@web/core/registry";
+import { browser } from "@web/core/browser/browser";
+
 import { ClickerModel } from "./clicker_model";
+
+const STORAGE_KEY = "awesome_clicker_state";
 
 const clickerService = {
     dependencies: ["effect", "notification", "action"],
 
     start(env, { effect, notification, action }) {
-        const clicker = new ClickerModel();
+        const savedState = browser.localStorage.getItem(STORAGE_KEY);
+
+        const clicker = new ClickerModel(
+            savedState ? JSON.parse(savedState) : {}
+        );
 
         clicker.bus.addEventListener("MILESTONE_1k", () => {
             effect.add({
