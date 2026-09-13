@@ -1,8 +1,7 @@
 /** @odoo-module **/
 
-import { Component } from "@odoo/owl";
+import { Component, useState } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-
 import { useClicker } from "./clicker_hook";
 import { ClickValue } from "./ClickValue/click_value";
 
@@ -15,6 +14,11 @@ export class ClickerClientAction extends Component {
 
     setup() {
         this.clicker = useClicker();
+        this.state = useState({ activeTab: 'clicks' });
+    }
+
+    switchTab(tabName) {
+        this.state.activeTab = tabName;
     }
 }
 
