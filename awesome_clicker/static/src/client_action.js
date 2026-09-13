@@ -2,6 +2,7 @@
 
 import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
+
 import { useClicker } from "./clicker_hook";
 import { ClickValue } from "./ClickValue/click_value";
 

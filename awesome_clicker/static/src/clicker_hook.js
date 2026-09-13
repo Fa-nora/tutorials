@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
-import { useService } from "@web/core/utils/hooks";
 import { useState } from "@odoo/owl";
+import { useService } from "@web/core/utils/hooks";
 
 export function useClicker() {
     const clicker = useService("awesome_clicker.clicker");
