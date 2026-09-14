@@ -3,12 +3,21 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_gallery.GalleryController">
-	    <layout display="props.display">
-        <div>
-            Hello World!
-        </div>
-	</layout>
-
+        <Layout display="props.display">
+            <t t-set-slot="default">
+                <div>
+                    <t t-foreach="images" t-as="image" t-key="image.id">
+                        <div>
+                            ID:
+	                        <t t-esc="image.id"/>
+                            -
+                            Image size:
+                            <t t-esc="image[props.archInfo.imageField]"/>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </Layout>
     </t>
 
 </templates>

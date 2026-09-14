@@ -5,13 +5,14 @@
         <field name="view_mode">kanban,list,form,activity,gallery</field>
     </record>
 
-        <record id="view_partner_form" model="ir.ui.view">
-            <field name="name">res.partner.form</field>
-            <field name="model">res.partner</field>
-            <field name="priority" eval="1"/>
-            <field name="arch" type="xml">
-                <gallery string="Partners">
-                </gallery>
-            </field>
-        </record>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <gallery string="Partners" image_field="image_1920">
+            </gallery>
+        </field>
+    </record>
+
 </odoo>
