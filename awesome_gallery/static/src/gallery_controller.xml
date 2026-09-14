@@ -5,19 +5,25 @@
     <t t-name="awesome_gallery.GalleryController">
         <Layout display="props.display">
             <t t-set-slot="default">
-                <div>
-                    <t t-foreach="images" t-as="image" t-key="image.id">
-                        <div>
-                            ID:
-	                        <t t-esc="image.id"/>
-                            -
-                            Image size:
-                            <t t-esc="image[props.archInfo.imageField]"/>
-                        </div>
-                    </t>
-                </div>
+                <GalleryRenderer
+                    images="model.images"
+                    imageField="props.archInfo.imageField"
+                />
             </t>
         </Layout>
+    </t>
+
+    <t t-name="awesome_gallery.GalleryRenderer">
+        <div>
+            <t t-foreach="props.images" t-as="image" t-key="image.id">
+                <div>
+                    ID: <t t-esc="image.id"/>
+                    -
+                    Image size:
+                    <t t-esc="image[props.imageField]"/>
+                </div>
+            </t>
+        </div>
     </t>
 
 </templates>
