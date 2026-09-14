@@ -18,10 +18,10 @@
         'views/views.xml',
     ],
     'assets': {
-        'web.assets_backend': [
-            'awesome_gallery/static/src/**/*',
-        ],
-    },
+    'web.assets_backend': [
+        'awesome_gallery/static/src/**/*',
+    ],
+},
     'author': 'Odoo S.A.',
     'license': 'AGPL-3'
 }
