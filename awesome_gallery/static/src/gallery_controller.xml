@@ -3,9 +3,12 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_gallery.GalleryController">
+	    <layout display="props.display">
         <div>
             Hello World!
         </div>
+	</layout>
+
     </t>
 
 </templates>
