@@ -5,10 +5,9 @@
     <t t-name="awesome_gallery.GalleryController">
         <Layout display="props.display">
             <t t-set-slot="default">
-                <GalleryRenderer
-                    images="model.images"
-                    imageField="props.archInfo.imageField"
-                />
+                <t t-component="props.Renderer"
+                   images="model.images"
+                   imageField="props.archInfo.imageField"/>
             </t>
         </Layout>
     </t>
