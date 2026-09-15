@@ -19,6 +19,20 @@ export class GalleryRenderer extends Component {
         });
     }
 
+    getTooltip(image) {
+        if (!this.props.tooltipField) {
+            return "";
+        }
+
+        const value = image[this.props.tooltipField];
+
+        if (Array.isArray(value)) {
+            return value[1] || "";
+        }
+
+        return value ?? "";
+    }
+
     openRecord = (image) => {
         this.action.switchView("form", {
             resId: image.id,

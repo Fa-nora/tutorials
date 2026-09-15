@@ -10,6 +10,7 @@
                 <t t-component="props.Renderer"
                    images="model.images"
                    imageField="props.archInfo.imageField"
+                   tooltipField="props.archInfo.tooltipField"
                    resModel="props.resModel"/>
 
             </t>
@@ -29,6 +30,7 @@
 
                         <img
                             t-att-src="getImageUrl(image)"
+                            t-att-data-tooltip="getTooltip(image)"
                             alt="Gallery Image"
                             t-on-click="() => openRecord(image)"
                         />

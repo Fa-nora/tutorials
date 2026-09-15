@@ -7,6 +7,7 @@ export class GalleryModel {
         this.orm = params.orm;
         this.resModel = params.resModel;
         this.imageField = params.imageField;
+        this.tooltipField = params.tooltipField;
 
         this.keepLast = new KeepLast();
 
@@ -15,15 +16,21 @@ export class GalleryModel {
     }
 
     async load(domain) {
+        const specification = {
+            id: {},
+            [this.imageField]: {},
+        };
+
+        if (this.tooltipField) {
+            specification[this.tooltipField] = {};
+        }
+
         const { length, records } = await this.keepLast.add(
             this.orm.webSearchRead(
                 this.resModel,
                 domain,
                 {
-                    specification: {
-                        id: {},
-                        [this.imageField]: {},
-                    },
+                    specification,
                     context: {
                         bin_size: true,
                     },
