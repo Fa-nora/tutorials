@@ -30,6 +30,7 @@
                         <img
                             t-att-src="getImageUrl(image)"
                             alt="Gallery Image"
+                            t-on-click="() => openRecord(image)"
                         />
 
                     </t>
