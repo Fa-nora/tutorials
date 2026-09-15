@@ -13,9 +13,11 @@ export class GalleryModel {
 
         this.images = [];
         this.length = 0;
+        this.offset = 0;
+        this.limit = 20;
     }
 
-    async load(domain) {
+    async load(domain, offset = this.offset, limit = this.limit) {
         const specification = {
             id: {},
             [this.imageField]: {},
@@ -31,6 +33,8 @@ export class GalleryModel {
                 domain,
                 {
                     specification,
+                    offset,
+                    limit,
                     context: {
                         bin_size: true,
                     },
@@ -40,5 +44,7 @@ export class GalleryModel {
 
         this.images = records;
         this.length = length;
+        this.offset = offset;
+        this.limit = limit;
     }
 }
