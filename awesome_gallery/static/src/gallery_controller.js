@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import { Component, onWillStart, onWillUpdateProps } from "@odoo/owl";
+import { Component, onWillStart, onWillUpdateProps, useState } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { Layout } from "@web/search/layout";
 import { usePager } from "@web/search/pager_hook";
@@ -21,22 +21,44 @@ export class GalleryController extends Component {
             tooltipField: this.props.archInfo.tooltipField,
         });
 
+        this.pagerState = useState({
+            offset: 0,
+            limit: 10,
+        });
+
         usePager(() => ({
-            offset: this.model.offset,
-            limit: this.model.limit,
+            offset: this.pagerState.offset,
+            limit: this.pagerState.limit,
             total: this.model.length,
 
             onUpdate: async ({ offset, limit }) => {
-                await this.model.load(this.props.domain, offset, limit);
+                this.pagerState.offset = offset;
+                this.pagerState.limit = limit;
+
+                await this.model.load(
+                    this.props.domain,
+                    offset,
+                    limit
+                );
             },
         }));
 
         onWillStart(async () => {
-            await this.model.load(this.props.domain);
+            await this.model.load(
+                this.props.domain,
+                this.pagerState.offset,
+                this.pagerState.limit
+            );
         });
 
         onWillUpdateProps(async (nextProps) => {
-            await this.model.load(nextProps.domain);
+            this.pagerState.offset = 0;
+
+            await this.model.load(
+                nextProps.domain,
+                0,
+                this.pagerState.limit
+            );
         });
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+    <start>
+        <element name="gallery">
+
+            <attribute name="image_field">
+                <text/>
+            </attribute>
+
+            <optional>
+                <attribute name="tooltip_field">
+                    <text/>
+                </attribute>
+            </optional>
+
+        </element>
+    </start>
+
+</grammar>

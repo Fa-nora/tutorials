@@ -1,0 +1,25 @@
+.o_gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+.o_gallery_image {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.o_gallery_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.o_gallery_empty {
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+}
