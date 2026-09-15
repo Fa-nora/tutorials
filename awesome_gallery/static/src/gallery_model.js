@@ -20,6 +20,7 @@ export class GalleryModel {
     async load(domain, offset = this.offset, limit = this.limit) {
         const specification = {
             id: {},
+            write_date: {},
             [this.imageField]: {},
         };
 

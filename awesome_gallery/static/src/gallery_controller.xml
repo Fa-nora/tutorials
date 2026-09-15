@@ -4,52 +4,51 @@
 
     <t t-name="awesome_gallery.GalleryController">
         <Layout display="props.display">
-
             <t t-set-slot="default">
-
                 <t t-component="props.Renderer"
                    images="model.images"
                    imageField="props.archInfo.imageField"
                    tooltipField="props.archInfo.tooltipField"
                    resModel="props.resModel"/>
-
             </t>
-
         </Layout>
     </t>
 
     <t t-name="awesome_gallery.GalleryRenderer">
-
         <div class="o_gallery">
-
             <t t-foreach="props.images" t-as="image" t-key="image.id">
-
                 <div class="o_gallery_image">
 
                     <t t-if="props.imageField">
+                        <div class="o_gallery_image_container">
 
-                        <img
-                            t-att-src="getImageUrl(image)"
-                            t-att-data-tooltip="getTooltip(image)"
-                            alt="Gallery Image"
-                            t-on-click="() => openRecord(image)"
-                        />
+                            <img
+                                t-att-src="getImageUrl(image)"
+                                t-att-data-tooltip="getTooltip(image)"
+                                alt="Gallery Image"
+                                t-on-click="() => openRecord(image)"
+                            />
 
+                            <div
+                                class="o_gallery_upload"
+                                t-on-click.stop=""
+                            >
+                                <FileUploader
+                                    onUploaded="(file) => onImageUploaded(image, file)"
+                                />
+                            </div>
+
+                        </div>
                     </t>
 
                     <t t-else="">
-
                         <div class="o_gallery_empty">
                         </div>
-
                     </t>
 
                 </div>
-
             </t>
-
         </div>
-
     </t>
 
 </templates>

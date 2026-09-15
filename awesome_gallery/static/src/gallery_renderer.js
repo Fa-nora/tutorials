@@ -3,12 +3,15 @@
 import { Component } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { url } from "@web/core/utils/urls";
+import { FileUploader } from "@web/views/fields/file_handler";
 
 export class GalleryRenderer extends Component {
     static template = "awesome_gallery.GalleryRenderer";
+    static components = { FileUploader };
 
     setup() {
         this.action = useService("action");
+        this.orm = useService("orm");
     }
 
     getImageUrl(image) {
@@ -16,6 +19,7 @@ export class GalleryRenderer extends Component {
             model: this.props.resModel,
             id: image.id,
             field: this.props.imageField,
+            unique: image.write_date,
         });
     }
 
@@ -37,5 +41,15 @@ export class GalleryRenderer extends Component {
         this.action.switchView("form", {
             resId: image.id,
         });
+    };
+
+    onImageUploaded = async (image, file) => {
+        await this.orm.webSave(
+            this.props.resModel,
+            [image.id],
+            {
+                [this.props.imageField]: file.data,
+            }
+        );
     };
 }

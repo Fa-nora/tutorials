@@ -11,6 +11,12 @@
     overflow: hidden;
 }
 
+.o_gallery_image_container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .o_gallery_image img {
     width: 100%;
     height: 100%;
@@ -22,4 +28,11 @@
     width: 100%;
     height: 100%;
     background: #eeeeee;
+}
+
+.o_gallery_upload {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 10;
 }
