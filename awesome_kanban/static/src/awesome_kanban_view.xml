@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <templates xml:space="preserve">
 
     <t t-name="awesome_kanban.CustomerList">
         <div>
-            Hello owl
+            <t t-foreach="state.customers" t-as="customer" t-key="customer.id">
+                <div t-on-click="() => props.selectCustomer(customer)">
+                    <t t-esc="customer.name"/>
+                </div>
+            </t>
         </div>
     </t>
 
