@@ -8,6 +8,7 @@ export class GalleryModel {
         this.resModel = params.resModel;
         this.imageField = params.imageField;
         this.tooltipField = params.tooltipField;
+        this.fieldNames = params.fieldNames || [];
 
         this.keepLast = new KeepLast();
 
@@ -26,6 +27,10 @@ export class GalleryModel {
 
         if (this.tooltipField) {
             specification[this.tooltipField] = {};
+        }
+
+        for (const fieldName of this.fieldNames) {
+            specification[fieldName] = {};
         }
 
         const { length, records } = await this.keepLast.add(

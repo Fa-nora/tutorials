@@ -1,55 +1,68 @@
 /** @odoo-module **/
 
-import { Component } from "@odoo/owl";
+import { Component, xml, useRef } from "@odoo/owl";
+
 import { useService } from "@web/core/utils/hooks";
 import { url } from "@web/core/utils/urls";
+import { visitXML } from "@web/core/utils/xml";
+
 import { FileUploader } from "@web/views/fields/file_handler";
 
-export class GalleryRenderer extends Component {
-    static template = "awesome_gallery.GalleryRenderer";
-    static components = { FileUploader };
+
+export class GalleryCard extends Component {
+    static template = "awesome_gallery.GalleryCard";
+
+    static components = {
+        FileUploader,
+    };
 
     setup() {
         this.action = useService("action");
         this.orm = useService("orm");
     }
 
-    getImageUrl(image) {
+    getImageUrl() {
         return url("/web/image", {
             model: this.props.resModel,
-            id: image.id,
+            id: this.props.image.id,
             field: this.props.imageField,
-            unique: image.write_date,
+            unique: this.props.image.write_date,
         });
     }
 
-    getTooltip(image) {
-        if (!this.props.tooltipField) {
-            return "";
-        }
-
-        const value = image[this.props.tooltipField];
-
-        if (Array.isArray(value)) {
-            return value[1] || "";
-        }
-
-        return value ?? "";
+    getTooltipText() {
+        const image = this.props.image;
+        return `name: ${image.name || ''}\ne-mail: ${image.email || ''}`;
     }
 
-    openRecord = (image) => {
+    openRecord = () => {
         this.action.switchView("form", {
-            resId: image.id,
+            resId: this.props.image.id,
         });
     };
 
-    onImageUploaded = async (image, file) => {
+    onImageUploaded = async (file) => {
         await this.orm.webSave(
             this.props.resModel,
-            [image.id],
+            [this.props.image.id],
             {
                 [this.props.imageField]: file.data,
             }
         );
     };
+}
+
+
+export class GalleryRenderer extends Component {
+    static template = "awesome_gallery.GalleryRenderer";
+
+    static components = {
+        FileUploader,
+        GalleryCard,
+    };
+
+    setup() {
+        this.action = useService("action");
+        this.orm = useService("orm");
+    }
 }

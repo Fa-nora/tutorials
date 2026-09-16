@@ -3,6 +3,7 @@
 <grammar xmlns="http://relaxng.org/ns/structure/1.0">
 
     <start>
+
         <element name="gallery">
 
             <attribute name="image_field">
@@ -15,7 +16,74 @@
                 </attribute>
             </optional>
 
+            <zeroOrMore>
+
+                <choice>
+
+                    <text/>
+
+                    <element name="field">
+                        <attribute name="name">
+                            <text/>
+                        </attribute>
+                    </element>
+
+                    <ref name="tooltip-template"/>
+
+                </choice>
+
+            </zeroOrMore>
+
         </element>
+
     </start>
+
+
+    <define name="tooltip-template">
+
+        <element name="tooltip-template">
+
+            <zeroOrMore>
+
+                <choice>
+
+                    <text/>
+
+                    <ref name="any"/>
+
+                </choice>
+
+            </zeroOrMore>
+
+        </element>
+
+    </define>
+
+
+    <define name="any">
+
+        <element>
+
+            <anyName/>
+
+            <zeroOrMore>
+
+                <choice>
+
+                    <attribute>
+                        <anyName/>
+                    </attribute>
+
+                    <text/>
+
+                    <ref name="any"/>
+
+                </choice>
+
+            </zeroOrMore>
+
+        </element>
+
+    </define>
 
 </grammar>

@@ -1,6 +1,12 @@
 /** @odoo-module **/
 
-import { Component, onWillStart, onWillUpdateProps, useState } from "@odoo/owl";
+import {
+    Component,
+    onWillStart,
+    onWillUpdateProps,
+    useState,
+} from "@odoo/owl";
+
 import { useService } from "@web/core/utils/hooks";
 import { Layout } from "@web/search/layout";
 import { usePager } from "@web/search/pager_hook";
@@ -19,6 +25,7 @@ export class GalleryController extends Component {
             resModel: this.props.resModel,
             imageField: this.props.archInfo.imageField,
             tooltipField: this.props.archInfo.tooltipField,
+            fieldNames: this.props.archInfo.fieldNames,
         });
 
         this.pagerState = useState({

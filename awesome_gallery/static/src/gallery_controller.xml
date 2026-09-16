@@ -3,52 +3,88 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_gallery.GalleryController">
+
         <Layout display="props.display">
+
             <t t-set-slot="default">
-                <t t-component="props.Renderer"
-                   images="model.images"
-                   imageField="props.archInfo.imageField"
-                   tooltipField="props.archInfo.tooltipField"
-                   resModel="props.resModel"/>
+
+                <t
+                    t-component="props.Renderer"
+                    images="model.images"
+                    imageField="props.archInfo.imageField"
+                    tooltipField="props.archInfo.tooltipField"
+                    tooltipTemplate="props.archInfo.tooltipTemplate"
+                    resModel="props.resModel"
+                />
+
             </t>
+
         </Layout>
+
     </t>
 
+
     <t t-name="awesome_gallery.GalleryRenderer">
+
         <div class="o_gallery">
-            <t t-foreach="props.images" t-as="image" t-key="image.id">
+
+            <t
+                t-foreach="props.images"
+                t-as="image"
+                t-key="image.id"
+            >
+
                 <div class="o_gallery_image">
+                    <GalleryCard
+                        image="image"
+                        imageField="props.imageField"
+                        resModel="props.resModel"
+                    />
+                </div>
 
-                    <t t-if="props.imageField">
-                        <div class="o_gallery_image_container">
+            </t>
 
-                            <img
-                                t-att-src="getImageUrl(image)"
-                                t-att-data-tooltip="getTooltip(image)"
-                                alt="Gallery Image"
-                                t-on-click="() => openRecord(image)"
-                            />
+        </div>
 
-                            <div
-                                class="o_gallery_upload"
-                                t-on-click.stop=""
-                            >
-                                <FileUploader
-                                    onUploaded="(file) => onImageUploaded(image, file)"
-                                />
-                            </div>
+    </t>
 
-                        </div>
-                    </t>
 
-                    <t t-else="">
-                        <div class="o_gallery_empty">
-                        </div>
-                    </t>
+    <t t-name="awesome_gallery.GalleryCard">
 
+        <div
+            class="o_gallery_image_container"
+            t-on-click="openRecord"
+            t-att-title="getTooltipText()"
+            style="cursor: pointer;"
+        >
+
+            <!-- اگر عکس دارد -->
+            <t t-if="props.image[props.imageField]">
+                <img
+                    t-att-src="getImageUrl()"
+                    alt="Gallery Image"
+                />
+            </t>
+
+            <!-- اگر عکس ندارد (باکس خالی با دوربین) -->
+            <t t-else="">
+                <div class="o_gallery_empty">
+                    <i class="fa fa-camera fa-2x text-muted" style="display: flex; align-items: center; justify-content: center; height: 100%;"/>
                 </div>
             </t>
+
+            <!-- دکمه آپلود روی همه کارت‌ها -->
+            <div
+                class="o_gallery_upload"
+                t-on-click.stop=""
+            >
+                <FileUploader
+                    onUploaded="onImageUploaded"
+                />
+            </div>
+
         </div>
+
     </t>
 
 </templates>
