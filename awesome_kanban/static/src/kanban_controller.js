@@ -1,3 +1,11 @@
-import { KanbanController } from "@web/views/kanban/kanban_controller";
+/** @odoo-module **/
 
-export class AwesomeKanbanController extends KanbanController {}
+import { KanbanController } from "@web/views/kanban/kanban_controller";
+import { CustomerList } from "./customer_list";
+
+export class AwesomeKanbanController extends KanbanController {
+    static components = {
+        ...KanbanController.components,
+        CustomerList,
+    };
+}

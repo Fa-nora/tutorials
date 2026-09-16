@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_kanban.CustomerList">
+        <div>
+            Hello owl
+        </div>
+    </t>
+
+    <t t-inherit="web.KanbanView" t-inherit-mode="extension">
+        <xpath expr="//t[@t-component='props.Renderer']" position="before">
+            <CustomerList selectCustomer="() => {}"/>
+        </xpath>
+    </t>
+
+</templates>
