@@ -10,7 +10,16 @@
                 Customers
             </div>
 
-            <!-- Active customers checkbox -->
+            <!-- Search bar -->
+            <div class="o_awesome_customer_search">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    t-on-input="onSearch"
+                />
+            </div>
+
+            <!-- Active customers -->
             <div class="o_awesome_customer_filter">
                 <input
                     type="checkbox"
@@ -25,7 +34,7 @@
 
             <!-- Customers -->
             <t
-                t-foreach="state.customers"
+                t-foreach="filteredCustomers"
                 t-as="customer"
                 t-key="customer.id"
             >
