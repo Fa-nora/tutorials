@@ -16,47 +16,38 @@ export class CustomerList extends Component {
 
         this.state = useState({
             customers: [],
-            activeCustomers: false,
-            search: "",
+            displayActiveCustomers: false,
+            searchString: "",
         });
 
         onWillStart(async () => {
-            await this.loadCustomers();
+            this.state.customers = await this.orm.searchRead(
+                "res.partner",
+                [],
+                ["name", "opportunity_ids"]
+            );
         });
     }
 
-    async loadCustomers() {
-        let domain = [];
+    get displayedCustomers() {
+        let customers = this.state.customers;
 
-        if (this.state.activeCustomers) {
-            domain.push(["opportunity_ids", "!=", false]);
+        // Active customers filter
+        if (this.state.displayActiveCustomers) {
+            customers = customers.filter(
+                (customer) => customer.opportunity_ids.length > 0
+            );
         }
 
-        this.state.customers = await this.orm.searchRead(
-            "res.partner",
-            domain,
-            ["name"]
-        );
-    }
-
-    get filteredCustomers() {
-        if (!this.state.search) {
-            return this.state.customers;
+        // Search filter
+        if (this.state.searchString) {
+            customers = fuzzyLookup(
+                this.state.searchString,
+                customers,
+                (customer) => customer.name
+            );
         }
 
-        return fuzzyLookup(
-            this.state.search,
-            this.state.customers,
-            (customer) => customer.name
-        );
-    }
-
-    async onActiveCustomersChange(ev) {
-        this.state.activeCustomers = ev.target.checked;
-        await this.loadCustomers();
-    }
-
-    onSearch(ev) {
-        this.state.search = ev.target.value;
+        return customers;
     }
 }

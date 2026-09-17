@@ -4,51 +4,50 @@
 
     <!-- Customer List -->
     <t t-name="awesome_kanban.CustomerList">
-        <div class="o_awesome_customer_list">
+    <div class="o_awesome_customer_list">
 
-            <div class="o_awesome_customer_title">
-                Customers
-            </div>
-
-            <!-- Search bar -->
-            <div class="o_awesome_customer_search">
-                <input
-                    type="text"
-                    placeholder="Search..."
-                    t-on-input="onSearch"
-                />
-            </div>
-
-            <!-- Active customers -->
-            <div class="o_awesome_customer_filter">
-                <input
-                    type="checkbox"
-                    id="active_customers"
-                    t-on-change="onActiveCustomersChange"
-                />
-
-                <label for="active_customers">
-                    Active customers
-                </label>
-            </div>
-
-            <!-- Customers -->
-            <t
-                t-foreach="filteredCustomers"
-                t-as="customer"
-                t-key="customer.id"
-            >
-                <div
-                    class="o_awesome_customer"
-                    t-on-click="() => props.selectCustomer(customer)"
-                >
-                    <t t-esc="customer.name"/>
-                </div>
-            </t>
-
+        <div class="o_awesome_customer_title">
+            Customers
         </div>
-    </t>
 
+        <!-- Search -->
+        <div class="o_awesome_customer_search">
+            <input
+                type="text"
+                placeholder="Search..."
+                t-model="state.searchString"
+            />
+        </div>
+
+        <!-- Active customers -->
+        <div class="o_awesome_customer_filter">
+            <input
+                type="checkbox"
+                id="active_customers"
+                t-model="state.displayActiveCustomers"
+            />
+
+            <label for="active_customers">
+                Active customers
+            </label>
+        </div>
+
+        <!-- Customers -->
+        <t
+            t-foreach="displayedCustomers"
+            t-as="customer"
+            t-key="customer.id"
+        >
+            <div
+                class="o_awesome_customer"
+                t-on-click="() => props.selectCustomer(customer)"
+            >
+                <t t-esc="customer.name"/>
+            </div>
+        </t>
+
+    </div>
+</t>
 
     <!-- Kanban View -->
     <t
