@@ -6,7 +6,7 @@ import { CustomerList } from "./customer_list";
 export class AwesomeKanbanController extends KanbanController {
     static template = "awesome_kanban.AwesomeKanbanView";
 
-	static components = {
+    static components = {
         ...KanbanController.components,
         CustomerList,
     };
@@ -17,7 +17,6 @@ export class AwesomeKanbanController extends KanbanController {
             (searchItem) => searchItem.isFromAwesomeKanban
         );
 
-        // غیرفعال کردن فیلتر قبلی
         for (const customerFilter of customerFilters) {
             if (customerFilter.isActive) {
                 this.env.searchModel.toggleSearchItem(customerFilter.id);

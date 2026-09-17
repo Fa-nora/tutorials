@@ -1,0 +1,50 @@
+.o_awesome_kanban_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+.o_awesome_customer_list {
+    width: 240px;
+    min-width: 240px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid #dee2e6;
+    background: white;
+}
+
+.o_awesome_customer_title {
+    padding: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.o_awesome_customer {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dee2e6;
+    cursor: pointer;
+}
+
+.o_awesome_customer:hover {
+    background-color: #f5f5f5;
+}
+
+.o_awesome_kanban_content {
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+}
+.o_awesome_customer_filter {
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.o_awesome_customer_filter input {
+    margin-right: 6px;
+}
+
+.o_awesome_customer_filter label {
+    cursor: pointer;
+}

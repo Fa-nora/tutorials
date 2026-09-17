@@ -2,24 +2,88 @@
 
 <templates xml:space="preserve">
 
-   <t t-name="awesome_kanban.CustomerList">
-    <div>
-        <t t-foreach="state.customers" t-as="customer" t-key="customer.id">
-            <div t-on-click="() => props.selectCustomer(customer)">
-                <t t-esc="customer.name"/>
+    <!-- Customer List -->
+    <t t-name="awesome_kanban.CustomerList">
+        <div class="o_awesome_customer_list">
+
+            <div class="o_awesome_customer_title">
+                Customers
             </div>
-        </t>
-    </div>
-</t>
 
- <t t-name="awesome_kanban.AwesomeKanbanView"
-   t-inherit="web.KanbanView"
-   t-inherit-mode="primary">
+            <!-- Active customers checkbox -->
+            <div class="o_awesome_customer_filter">
+                <input
+                    type="checkbox"
+                    id="active_customers"
+                    t-on-change="onActiveCustomersChange"
+                />
 
-    <xpath expr="//t[@t-component='props.Renderer']" position="before">
-        <CustomerList selectCustomer.bind="selectCustomer"/>
-    </xpath>
+                <label for="active_customers">
+                    Active customers
+                </label>
+            </div>
 
-</t>
+            <!-- Customers -->
+            <t
+                t-foreach="state.customers"
+                t-as="customer"
+                t-key="customer.id"
+            >
+                <div
+                    class="o_awesome_customer"
+                    t-on-click="() => props.selectCustomer(customer)"
+                >
+                    <t t-esc="customer.name"/>
+                </div>
+            </t>
+
+        </div>
+    </t>
+
+
+    <!-- Kanban View -->
+    <t
+        t-name="awesome_kanban.AwesomeKanbanView"
+        t-inherit="web.KanbanView"
+        t-inherit-mode="primary"
+    >
+
+        <xpath
+            expr="//t[@t-component='props.Renderer']"
+            position="replace"
+        >
+
+            <div class="o_awesome_kanban_container">
+
+                <CustomerList
+                    selectCustomer.bind="selectCustomer"
+                />
+
+                <div class="o_awesome_kanban_content">
+
+                    <t
+                        t-component="props.Renderer"
+                        t-if="model.isReady"
+                        list="model.root"
+                        archInfo="props.archInfo"
+                        Compiler="props.Compiler"
+                        readonly="props.readonly"
+                        forceGlobalClick="props.forceGlobalClick"
+                        deleteRecord.bind="deleteRecord"
+                        openRecord.bind="openRecord"
+                        noContentHelp="props.info.noContentHelp"
+                        scrollTop.bind="scrollTop"
+                        canQuickCreate="canQuickCreate"
+                        quickCreateState="quickCreateState"
+                        progressBarState="progressBarState"
+                    />
+
+                </div>
+
+            </div>
+
+        </xpath>
+
+    </t>
 
 </templates>

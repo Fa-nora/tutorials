@@ -15,14 +15,31 @@ export class CustomerList extends Component {
 
         this.state = useState({
             customers: [],
+            activeCustomers: false,
         });
 
         onWillStart(async () => {
-            this.state.customers = await this.orm.searchRead(
-                "res.partner",
-                [],
-                ["name"]
-            );
+            await this.loadCustomers();
         });
+    }
+
+    async loadCustomers() {
+        let domain = [];
+
+        if (this.state.activeCustomers) {
+            domain = [["opportunity_ids", "!=", false]];
+        }
+
+        this.state.customers = await this.orm.searchRead(
+            "res.partner",
+            domain,
+            ["name"]
+        );
+    }
+
+    async onActiveCustomersChange(ev) {
+        this.state.activeCustomers = ev.target.checked;
+
+        await this.loadCustomers();
     }
 }

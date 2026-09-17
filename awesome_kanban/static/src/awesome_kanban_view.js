@@ -9,4 +9,7 @@ const awesomeKanbanView = {
     Controller: AwesomeKanbanController,
 };
 
-registry.category("views").add("awesome_kanban", awesomeKanbanView);
+registry.category("views").add(
+    "awesome_kanban",
+    awesomeKanbanView
+);
