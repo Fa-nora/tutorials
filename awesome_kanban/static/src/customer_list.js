@@ -3,9 +3,14 @@
 import { Component, onWillStart, useState } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { fuzzyLookup } from "@web/core/utils/search";
+import { Pager } from "@web/core/pager/pager";
 
 export class CustomerList extends Component {
     static template = "awesome_kanban.CustomerList";
+
+    static components = {
+        Pager,
+    };
 
     static props = {
         selectCustomer: Function,
@@ -20,6 +25,11 @@ export class CustomerList extends Component {
             searchString: "",
         });
 
+        this.pagerState = useState({
+            offset: 0,
+            limit: 20,
+        });
+
         onWillStart(async () => {
             this.state.customers = await this.orm.searchRead(
                 "res.partner",
@@ -29,17 +39,15 @@ export class CustomerList extends Component {
         });
     }
 
-    get displayedCustomers() {
+    get filteredCustomers() {
         let customers = this.state.customers;
 
-        // Active customers filter
         if (this.state.displayActiveCustomers) {
             customers = customers.filter(
                 (customer) => customer.opportunity_ids.length > 0
             );
         }
 
-        // Search filter
         if (this.state.searchString) {
             customers = fuzzyLookup(
                 this.state.searchString,
@@ -49,5 +57,16 @@ export class CustomerList extends Component {
         }
 
         return customers;
+    }
+
+    get displayedCustomers() {
+        return this.filteredCustomers.slice(
+            this.pagerState.offset,
+            this.pagerState.offset + this.pagerState.limit
+        );
+    }
+
+    onPagerUpdate({ offset }) {
+        this.pagerState.offset = offset;
     }
 }

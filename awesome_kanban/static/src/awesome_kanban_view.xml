@@ -4,50 +4,60 @@
 
     <!-- Customer List -->
     <t t-name="awesome_kanban.CustomerList">
-    <div class="o_awesome_customer_list">
+        <div class="o_awesome_customer_list">
 
-        <div class="o_awesome_customer_title">
-            Customers
-        </div>
-
-        <!-- Search -->
-        <div class="o_awesome_customer_search">
-            <input
-                type="text"
-                placeholder="Search..."
-                t-model="state.searchString"
-            />
-        </div>
-
-        <!-- Active customers -->
-        <div class="o_awesome_customer_filter">
-            <input
-                type="checkbox"
-                id="active_customers"
-                t-model="state.displayActiveCustomers"
-            />
-
-            <label for="active_customers">
-                Active customers
-            </label>
-        </div>
-
-        <!-- Customers -->
-        <t
-            t-foreach="displayedCustomers"
-            t-as="customer"
-            t-key="customer.id"
-        >
-            <div
-                class="o_awesome_customer"
-                t-on-click="() => props.selectCustomer(customer)"
-            >
-                <t t-esc="customer.name"/>
+            <div class="o_awesome_customer_title">
+                Customers
             </div>
-        </t>
 
-    </div>
-</t>
+            <!-- Active customers -->
+            <div class="o_awesome_customer_filter">
+                <input
+                    type="checkbox"
+                    id="active_customers"
+                    t-model="state.displayActiveCustomers"
+                />
+                <label for="active_customers">
+                    Active customers
+                </label>
+            </div>
+
+            <!-- Pager -->
+            <div class="o_awesome_customer_pager">
+                <Pager
+                    offset="pagerState.offset"
+                    limit="pagerState.limit"
+                    total="filteredCustomers.length"
+                    onUpdate.bind="onPagerUpdate"
+                />
+            </div>
+
+            <!-- Search -->
+            <div class="o_awesome_customer_search">
+                <input
+                    type="text"
+                    placeholder="Search..."
+                    t-model="state.searchString"
+                />
+            </div>
+
+            <!-- Customers -->
+            <t
+                t-foreach="displayedCustomers"
+                t-as="customer"
+                t-key="customer.id"
+            >
+                <div
+                    class="o_awesome_customer"
+                    t-on-click="() => props.selectCustomer(customer)"
+                >
+                    <t t-esc="customer.name"/>
+                </div>
+            </t>
+
+        </div>
+    </t>
+
 
     <!-- Kanban View -->
     <t
