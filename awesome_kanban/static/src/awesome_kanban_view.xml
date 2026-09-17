@@ -2,20 +2,24 @@
 
 <templates xml:space="preserve">
 
-    <t t-name="awesome_kanban.CustomerList">
-        <div>
-            <t t-foreach="state.customers" t-as="customer" t-key="customer.id">
-                <div t-on-click="() => props.selectCustomer(customer)">
-                    <t t-esc="customer.name"/>
-                </div>
-            </t>
-        </div>
-    </t>
+   <t t-name="awesome_kanban.CustomerList">
+    <div>
+        <t t-foreach="state.customers" t-as="customer" t-key="customer.id">
+            <div t-on-click="() => props.selectCustomer(customer)">
+                <t t-esc="customer.name"/>
+            </div>
+        </t>
+    </div>
+</t>
 
-    <t t-inherit="web.KanbanView" t-inherit-mode="extension">
-        <xpath expr="//t[@t-component='props.Renderer']" position="before">
-            <CustomerList selectCustomer="() => {}"/>
-        </xpath>
-    </t>
+ <t t-name="awesome_kanban.AwesomeKanbanView"
+   t-inherit="web.KanbanView"
+   t-inherit-mode="primary">
+
+    <xpath expr="//t[@t-component='props.Renderer']" position="before">
+        <CustomerList selectCustomer.bind="selectCustomer"/>
+    </xpath>
+
+</t>
 
 </templates>
