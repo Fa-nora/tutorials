@@ -2,21 +2,21 @@
 <odoo>
 <!-- HEADER -->
     <!-- Add option header -->
-    <template id="template_header_opt" inherit_id="website.snippet_options" name="Airproof Header Template - Option">
-        <xpath expr="//we-select[@data-variable='header-template']" position="inside">
-            <we-button title="Airproof"
-                data-customize-website-views="website_airproof.header"
-                data-customize-website-variable="'airproof'"
-                data-img="/website_airproof/static/src/img/wbuilder/template-header-opt.svg"/>
-        </xpath>
-        <xpath expr="//*[@data-name='mega_menu_template_opt']/*" position="before">
-            <t t-set="_label">Airproof</t>
-            <we-button t-att-data-select-label="_label"
-                data-select-template="website_airproof.s_mega_menu_airproof"
-                data-img="/website_airproof/static/src/img/wbuilder/template-header-opt.svg"
-                t-out="_label"/>
-        </xpath>
-    </template>
+<!--    <template id="template_header_opt" inherit_id="website.snippet_options" name="Airproof Header Template - Option">-->
+<!--        <xpath expr="//we-select[@data-variable='header-template']" position="inside">-->
+<!--            <we-button title="Airproof"-->
+<!--                data-customize-website-views="website_airproof.header"-->
+<!--                data-customize-website-variable="'airproof'"-->
+<!--                data-img="/website_airproof/static/src/img/wbuilder/template-header-opt.svg"/>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//*[@data-name='mega_menu_template_opt']/*" position="before">-->
+<!--            <t t-set="_label">Airproof</t>-->
+<!--            <we-button t-att-data-select-label="_label"-->
+<!--                data-select-template="website_airproof.s_mega_menu_airproof"-->
+<!--                data-img="/website_airproof/static/src/img/wbuilder/template-header-opt.svg"-->
+<!--                t-out="_label"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
     <!-- Custom header -->
     <record id="header" model="ir.ui.view">
         <field name="name">Airproof header</field>
@@ -159,12 +159,12 @@
     </template>
 
 <!-- FOOTER -->
-    <!-- Add option footer -->
-    <template id="template_footer_opt" inherit_id="website.snippet_options" name="Airproof Footer Template - Option">
-        <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
-            <we-button title="Airproof" data-customize-website-views="website_airproof.footer" data-customize-website-variable="'airproof'" data-img="/website_airproof/static/src/img/wbuilder/template-footer-opt.svg" />
-        </xpath>
-    </template>
+<!--    &lt;!&ndash; Add option footer &ndash;&gt;-->
+<!--    <template id="template_footer_opt" inherit_id="website.snippet_options" name="Airproof Footer Template - Option">-->
+<!--        <xpath expr="//we-select[@data-variable='footer-template']" position="inside">-->
+<!--            <we-button title="Airproof" data-customize-website-views="website_airproof.footer" data-customize-website-variable="'airproof'" data-img="/website_airproof/static/src/img/wbuilder/template-footer-opt.svg" />-->
+<!--        </xpath>-->
+<!--    </template>-->
     <!-- Custom Footer -->
     <record id="footer" model="ir.ui.view">
         <field name="name">Airproof Footer</field>

@@ -5,7 +5,7 @@
     # 'version': '18.0.1.0',
     'author': 'PSBE Designers',
     'license': 'LGPL-3',
-    'depends': ['website_sale', 'website_sale_wishlist', 'website_blog', 'website_mass_mailing'],
+    'depends': ['website','website_sale', 'website_sale_wishlist', 'website_blog', 'website_mass_mailing'],
     'data': [
         # Snippets
         'views/snippets/options.xml',
