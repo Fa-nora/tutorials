@@ -1,156 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
-<!--   حذفHome   -->
-    <delete model="website.menu" search="[('url','in', ['/', '/']), ('website_id', '=', 1)]"/>
-    <!-- حذف shop -->
-    <delete model="website.menu" search="[('url','in', ['/', '/shop']), ('website_id', '=', 1)]"/>
 
-	<!-- درباره ما -->
-<record id="menu_about" model="website.menu">
-    <field name="name">About us</field>
-    <field name="url">/about-us</field>
-    <field name="website_id">1</field>
-    <field name="parent_id" search="[
-        ('url', '=', '/default-main-menu'),
-        ('website_id', '=', 1)]"/>
-    <field name="sequence" type="int">20</field>
-</record>
+    <!-- About us -->
+    <record id="menu_about" model="website.menu">
+        <field name="name">About us</field>
+        <field name="url">/about-us</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
 
-<!--منواصلی زیرمجموعه ها اخبار و آموزش ها -->
+    <!-- Blog Dropdown -->
+    <record id="menu_blog" model="website.menu">
+        <field name="name">Blog</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">30</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
 
-	<!-- منوی اصلی -->
-<record id="menu_blog" model="website.menu">
-    <field name="name">Blog</field>
-    <field name="parent_id" search="[
-        ('url', '=', '/default-main-menu'),
-        ('website_id', '=', 1)]"/>
-    <field name="website_id">1</field>
-    <field name="sequence" type="int">30</field>
-</record>
+    <record id="menu_blog_news" model="website.menu">
+        <field name="name">Our latest news</field>
+        <field name="url">/blog/our-latest-news-2</field>
+        <field name="parent_id" ref="menu_blog"/>
+        <field name="sequence">1</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
 
-<!--آخرین اخبار	-->
+    <record id="menu_blog_tutorials" model="website.menu">
+        <field name="name">Tutorials</field>
+        <field name="url">/blog/tutorials-3</field>
+        <field name="parent_id" ref="menu_blog"/>
+        <field name="sequence">2</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
 
-<record id="menu_blog_item_1" model="website.menu">
-    <field name="name">Our latest news</field>
-    <field name="url">/blog/our-latest-news-2</field>
-    <field name="website_id">1</field>
-    <field name="parent_id" ref="website_airproof.menu_blog"/>
-    <field name="sequence" type="int">31</field>
-</record>
+    <!-- Mega Menu: Waterproof drones -->
+    <record id="menu_drones" model="website.menu">
+        <field name="name">Waterproof drones</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">10</field>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="mega_menu_content" type="html">
+            <section class="s_mega_menu_cards pt24 pb24" style="background-color: #F4F4F4 !important;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
+                            <a href="/shop/airproof-mini-1" class="nav-link p-0">
+                                <img src="/web/image/website_airproof.img_mini" class="img-fluid img" alt="Airproof Mini"/>
+                                <div class="p-2"><font class="fw-bold">Airproof Mini</font></div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
+                            <a href="/shop/airproof-pro-2" class="nav-link p-0">
+                                <img src="/web/image/website_airproof.img_pro" class="img-fluid img" alt="Airproof Pro"/>
+                                <div class="p-2"><font class="fw-bold">Airproof Pro</font></div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
+                            <a href="/shop/airproof-robin-3" class="nav-link p-0">
+                                <img src="/web/image/website_airproof.img_robin" class="img-fluid img" alt="Airproof Robin"/>
+                                <div class="p-2"><font class="fw-bold">Airproof Robin</font></div>
+                            </a>
+                        </div>
+                        <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
+                            <a href="/shop/airproof-falcon-4" class="nav-link p-0">
+                                <img src="/web/image/website_airproof.img_falcon" class="img-fluid img" alt="Airproof Falcon"/>
+                                <div class="p-2"><font class="fw-bold">Airproof Falcon</font></div>
+                            </a>
 
-
-<!--آموزش ها-->
-<record id="menu_blog_item_2" model="website.menu">
-    <field name="name">Tutorials</field>
-    <field name="url">/blog/tutorials-3</field>
-    <field name="website_id">1</field>
-    <field name="parent_id" ref="website_airproof.menu_blog"/>
-    <field name="sequence" type="int">32</field>
-</record>
-
-
-
-<!-- mega منو 	-->
-
-<record id="menu_drones" model="website.menu">
-    <field name="is_mega_menu" eval="True"/>
-    <field name="name">Waterproof drones</field>
-
-    <field name="parent_id" search="[
-        ('url', '=', '/default-main-menu'),
-        ('website_id', '=', 1)]"/>
-
-    <field name="website_id">1</field>
-    <field name="sequence" type="int">10</field>
-	<field name="mega_menu_content" type="html">
-        <section class="s_mega_menu_cards pt24 pb24" style="background-color: #F4F4F4 !important;">
-            <div class="container">
-                <div class="row">
-
-<!--Airproof mini-->
-
-		                <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
-			                <a href="/shop/airproof-mini-1" class="nav-link p-0">
-				                <img src="/web/image/website_airproof.img_mini"
-				                     class="img-fluid img"/>
-				                <div class="p-2">
-					                <font class="fw-bold">Airproof mini</font>
-				                </div>
-			                </a>
-		                </div>
-
-
-<!--Airproof Pro-->
-
-	                <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
-                        <a href="/shop/airproof-pro-2" class="nav-link p-0">
-                            <img src="/web/image/website_airproof.img_pro"
-                                 alt="Drone Airproof Pro"
-                                 class="img-fluid img"/>
-                            <div class="p-2">
-                                <font class="fw-bold">Airproof Pro</font>
-                            </div>
-                        </a>
+                        </div>
+                        <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
+                            <a href="/shop/airproof-eagle-5" class="nav-link p-0">
+                                <img src="/web/image/website_airproof.img_eagle" class="img-fluid img" alt="Airproof Eagle"/>
+                                <div class="p-2"><font class="fw-bold">Airproof Eagle</font></div>
+                            </a>
+                        </div>
                     </div>
-
-<!--Airproof Robin-->
-
-
-	                 <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
-                        <a href="/shop/airproof-robin-3" class="nav-link p-0">
-                            <img src="/web/image/website_airproof.img_robin"
-                                 alt="Drone Airproof Robin"
-                                 class="img-fluid img"/>
-                            <div class="d-block p-2">
-                                <font class="fw-bold">Airproof Robin</font>
-                            </div>
-                        </a>
-                    </div>
-
-<!--Airproof Falcon-->
-
-	                <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
-                        <a href="/shop/airproof-falcon-4" class="nav-link p-0">
-                            <img src="/web/image/website_airproof.img_falcon"
-                                 alt="Drone Airproof Falcon"
-                                 class="img-fluid img"/>
-                            <div class="d-block p-2">
-                                <font class="fw-bold">Airproof Falcon</font>
-                            </div>
-                        </a>
-                    </div>
-
-<!--Airproof Eagle-->
-
-	                <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
-                        <a href="/shop/airproof-eagle-5" class="nav-link p-0">
-                            <img src="/web/image/website_airproof.img_eagle"
-                                 alt="Drone Airproof Eagle"
-                                 class="img-fluid img"/>
-                            <div class="d-block p-2">
-                                <font class="fw-bold">Airproof Eagle</font>
-                            </div>
-                        </a>
-                    </div>
-
-
-
                 </div>
-            </div>
-        </section>
-	</field>
-
-
-
-
-
-
-
-
-
-
-</record>
-
-
+            </section>
+        </field>
+    </record>
 
 </odoo>

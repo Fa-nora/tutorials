@@ -12,17 +12,17 @@ $o-website-values-palettes: (
         'buttons-font': 'Lato',
         // Header
         'hamburger-position': 'center',
-        'header-font-size': 0.875rem,
+        'header-font-size': 14px,
         // Buttons
         'btn-border-radius': 10px,
         'link-underline': 'never',
         'btn-border-radius-sm': 10px,
-        'btn-font-size-sm': 0.875rem,
-        'btn-font-size-lg': 1.125rem,
+        'btn-font-size-sm': 14px,
+        'btn-font-size-lg': 18px,
         'btn-secondary-outline': true,
-        // ...
    ),
 );
+
 // Fonts
 $o-theme-font-configs: (
     'Space Grotesk': (
@@ -30,7 +30,7 @@ $o-theme-font-configs: (
         'url': 'Space+Grotesk:400,500,700',
         'properties' : (
             'base': (
-                'font-size-base': 1rem,
+                'font-size-base': 16px,
             ),
         ),
     ),
@@ -38,11 +38,12 @@ $o-theme-font-configs: (
         'family': ('Lato', 'Trebuchet MS', 'Roboto', sans-serif),
         'properties' : (
             'base': (
-                'font-size-base': 1.125rem,
+                'font-size-base': 18px,
             ),
         ),
     ),
 );
+
 // Colors
 $o-color-palettes: map-merge($o-color-palettes,
     (

@@ -12,6 +12,7 @@
        <field name="key">website_airproof.page_home</field>
        <field name="url">/</field>
        <field name="type">qweb</field>
+	    <field name="header_overlay" eval="True"/>
        <field name="website_id" eval="1"/>
        <field name="arch" type="xml">
           <t t-name="website_airproof.page_home">
