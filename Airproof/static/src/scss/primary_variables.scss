@@ -1,0 +1,43 @@
+$o-website-values-palettes: (
+    (
+        // Templates
+        'header-template': 'default',
+        'footer-template': 'default',
+
+        // Colors
+        'color-palettes-name': 'airproof',
+
+        // Fonts
+        'headings-font': 'Space Grotesk',
+        'font': 'Lato',
+        'navbar-font': 'Lato',
+        'buttons-font': 'Lato',
+    ),
+);
+
+// Fonts
+$o-theme-font-configs: (
+    'Space Grotesk': (
+        'family': ('Space Grotesk', sans-serif),
+        'url': 'Space+Grotesk:300,400,500,700',
+    ),
+    'Lato': (
+        'family': ('Lato', sans-serif),
+        'url': 'Lato:300,400,700',
+    ),
+);
+
+// Colors
+$o-color-palettes: map-merge($o-color-palettes,
+    (
+        'airproof': (
+            'o-color-1': #CEF8A1,
+            'o-color-2': #0B8EE6,
+            'o-color-3': #BBE1FA,
+            'o-color-4': #FFFFFF,
+            'o-color-5': #000000,
+        ),
+    )
+);
+
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'airproof');
