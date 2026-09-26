@@ -5,7 +5,13 @@
     # 'version': '18.0.1.0',
     'author': 'PSBE Designers',
     'license': 'LGPL-3',
-    'depends': ['website','website_sale', 'website_sale_wishlist', 'website_blog', 'website_mass_mailing'],
+	'depends': [
+		'website',
+		'website_sale',
+		'website_sale_wishlist',
+		'website_blog',
+		'website_mass_mailing'
+	],
     'data': [
         # Snippets
         'views/snippets/options.xml',
@@ -14,9 +20,9 @@
         'data/presets.xml',
         'data/website.xml',
         # Menu
-        'data/menu.xml',
+        # 'data/menu.xml',
         # Gradients
-        'data/gradients.xml',
+        # 'data/gradients.xml',
         # Shapes
         'data/shapes.xml',
         # Pages
@@ -25,7 +31,7 @@
         # Frontend
         'views/new_page_template_templates.xml',
         'views/website_templates.xml',
-        'views/website_sale_templates.xml',
+        # 'views/website_sale_templates.xml',
         'views/website_sale_wishlist_templates.xml',
         # Images
         'data/images.xml',
@@ -43,10 +49,10 @@
             'website_airproof/static/src/scss/components/mouse_follower.scss',
             'website_airproof/static/src/scss/layout/header.scss',
             'website_airproof/static/src/scss/pages/product_page.scss',
-            'website_airproof/static/src/scss/pages/shop.scss',
+            # 'website_airproof/static/src/scss/pages/shop.scss',
             'website_airproof/static/src/scss/snippets/caroussel.scss',
-            'website_airproof/static/src/scss/snippets/newsletter.scss',
-            'website_airproof/static/src/snippets/s_airproof_carousel/000.scss',
+            # 'website_airproof/static/src/scss/snippets/newsletter.scss',
+            # 'website_airproof/static/src/snippets/s_airproof_carousel/000.scss',
             # JS
             'website_airproof/static/src/js/mouse_follower.js',
         ],
