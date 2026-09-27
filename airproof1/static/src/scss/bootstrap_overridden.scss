@@ -1,0 +1,41 @@
+// Typography
+$h1-font-size: 50px !default;
+$h2-font-size: 40px !default;
+$h3-font-size: 32px !default;
+$h4-font-size: 28px !default;
+$h5-font-size: 24px !default;
+$h6-font-size: 20px !default;
+
+$display-font-sizes: (
+  1: 100px,
+  2: 72px,
+  3: 64px,
+  4: 56px,
+  5: 48px,
+  6: 40px
+);
+
+$headings-font-weight: 700 !default;
+$font-weight-normal: 400 !default;
+
+// Buttons + Forms
+$input-border-radius: 10px !default;
+$input-border-color: o-color('black') !default;
+$input-border-width: 1px !default;
+$form-check-input-checked-color: o-color('black') !default;
+$form-check-radio-checked-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath  fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e") !default;
+
+// Borders
+$btn-border-radius-lg: 0 10px 10px 10px !default;
+$border-radius: 20px !default;
+
+// Navigation
+$navbar-light-color: o-color('o-color-5') !default;
+$navbar-light-active-color: o-color('o-color-5') !default;
+$navbar-light-hover-color: o-color('o-color-5') !default;
+$navbar-light-disabled-color: rgba(o-color('o-color-5'), .5) !default;
+$navbar-padding-y: 22px !default;
+$navbar-nav-link-padding-x: 16px !default;
+
+// Breadcrumb
+$breadcrumb-divider: quote("\f105") !default;

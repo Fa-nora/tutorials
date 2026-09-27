@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
-    <!-- Delete default menus -->
-    <delete model="website.menu" search="[('url','in', ['/', '/']), ('website_id', '=', 1)]"/>
-    <delete model="website.menu" search="[('url','in', ['/', '/blog']), ('website_id', '=', 1)]"/>
-    <delete model="website.menu" search="[('url','in', ['/', '/shop']), ('website_id', '=', 1)]"/>
-    <delete model="website.menu" search="[('url','in', ['/', '/contactus']), ('website_id', '=', 1)]"/>
 
-    <!-- Mega Menu -->
+    <!-- About us -->
+    <record id="menu_about" model="website.menu">
+        <field name="name">About us</field>
+        <field name="url">/about-us</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">20</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
+
+    <!-- Blog Dropdown -->
+    <record id="menu_blog" model="website.menu">
+        <field name="name">Blog</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">30</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
+
+    <record id="menu_blog_news" model="website.menu">
+        <field name="name">Our latest news</field>
+        <field name="url">/blog/our-latest-news-2</field>
+        <field name="parent_id" ref="menu_blog"/>
+        <field name="sequence">1</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
+
+    <record id="menu_blog_tutorials" model="website.menu">
+        <field name="name">Tutorials</field>
+        <field name="url">/blog/tutorials-3</field>
+        <field name="parent_id" ref="menu_blog"/>
+        <field name="sequence">2</field>
+        <field name="website_id" ref="website.default_website"/>
+    </record>
+
+    <!-- Mega Menu: Waterproof drones -->
     <record id="menu_drones" model="website.menu">
-        <field name="is_mega_menu" eval="True"/>
         <field name="name">Waterproof drones</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
-        <field name="website_id">1</field>
-        <field name="sequence" type="int">10</field>
+        <field name="is_mega_menu" eval="True"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">10</field>
+        <field name="website_id" ref="website.default_website"/>
         <field name="mega_menu_content" type="html">
             <section class="s_mega_menu_cards pt24 pb24" style="background-color: #F4F4F4 !important;">
                 <div class="container">
@@ -40,6 +68,7 @@
                                 <img src="/web/image/website_airproof.img_falcon" class="img-fluid img" alt="Airproof Falcon"/>
                                 <div class="p-2"><font class="fw-bold">Airproof Falcon</font></div>
                             </a>
+
                         </div>
                         <div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
                             <a href="/shop/airproof-eagle-5" class="nav-link p-0">
@@ -53,43 +82,4 @@
         </field>
     </record>
 
-    <!-- About us -->
-    <record id="menu_about" model="website.menu">
-        <field name="name">About us</field>
-        <field name="url">/about-us</field>
-        <field name="website_id">1</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
-        <field name="sequence" type="int">20</field>
-    </record>
-
-    <!-- Blog,Dropdown -->
-    <record id="menu_blog" model="website.menu">
-        <field name="name">Blog</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
-        <field name="website_id">1</field>
-        <field name="sequence" type="int">30</field>
-    </record>
-    <record id="menu_blog_item_1" model="website.menu">
-        <field name="name">Our latest news</field>
-        <field name="url">/blog/our-latest-news-2</field>
-        <field name="website_id">1</field>
-        <field name="parent_id" ref="website_airproof.menu_blog"/>
-        <field name="sequence" type="int">31</field>
-    </record>
-    <record id="menu_blog_item_2" model="website.menu">
-        <field name="name">Tutorials</field>
-        <field name="url">/blog/tutorials-3</field>
-        <field name="website_id">1</field>
-        <field name="parent_id" ref="website_airproof.menu_blog"/>
-        <field name="sequence" type="int">32</field>
-    </record>
-
-    <!-- Contact us -->
-    <record id="menu_contact" model="website.menu">
-        <field name="name">Contact us</field>
-        <field name="url">/contactus</field>
-        <field name="website_id">1</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
-        <field name="sequence" type="int">40</field>
-    </record>
 </odoo>
