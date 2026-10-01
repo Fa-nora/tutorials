@@ -1,0 +1,34 @@
+#wrapwrap {
+    // خط سبز
+    .navbar-light .navbar-nav .show > .nav-link,
+    .navbar-light .navbar-nav .nav-link.active {
+        border-bottom: 2px solid o-color('o-color-1');
+    }
+
+    // کشویی منو
+    #top_menu_collapse .dropdown-toggle::after {
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        border: none;
+        content: '';
+        background-image: url('/website_airproof/static/src/img/content/icons/angle-down-solid.svg');
+    }
+
+    // خرید سبد
+    .my_cart_quantity,
+    .my_wish_quantity {
+        height: 18px;
+        width: 18px;
+        border-radius: 99px;
+        background-color: o-color('o-color-1') !important;
+        color: o-color('black') !important;
+    }
+
+    // چین وسط لوگو
+    @media (min-width: 992px) {
+        header .o_header_centered_logo {
+            width: 50%;
+        }
+    }
+}

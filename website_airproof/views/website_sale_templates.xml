@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--آیکون-->
+    <template id="header_cart_link" inherit_id="website_sale.header_cart_link" name="Airproof - Cart icon">
+        <xpath expr="//i" position="replace">
+            <img src="/web/image/website_airproof.img_shopping" alt="shopping icon"/>
+        </xpath>
+    </template>
+</odoo>

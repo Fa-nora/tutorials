@@ -6,7 +6,7 @@
     <delete model="website.menu" search="[('url','in', ['/', '/shop']), ('website_id', '=', 1)]"/>
     <delete model="website.menu" search="[('url','in', ['/', '/contactus']), ('website_id', '=', 1)]"/>
 
-    <!-- Mega Menu -->
+    <!-- Waterproof drones -->
     <record id="menu_drones" model="website.menu">
         <field name="is_mega_menu" eval="True"/>
         <field name="name">Waterproof drones</field>
@@ -58,14 +58,17 @@
         <field name="name">About us</field>
         <field name="url">/about-us</field>
         <field name="website_id">1</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
+        <field name="parent_id" eval="ref('website.default_website').menu_id.id"/>
         <field name="sequence" type="int">20</field>
+
+
     </record>
 
     <!-- Blog,Dropdown -->
     <record id="menu_blog" model="website.menu">
         <field name="name">Blog</field>
-        <field name="parent_id" search="[('url', '=', '/default-main-menu'), ('website_id', '=', 1)]"/>
+	    <field name="url">/</field>
+        <field name="parent_id" eval="ref('website.default_website').menu_id.id"/>
         <field name="website_id">1</field>
         <field name="sequence" type="int">30</field>
     </record>
@@ -73,14 +76,14 @@
         <field name="name">Our latest news</field>
         <field name="url">/blog/our-latest-news-2</field>
         <field name="website_id">1</field>
-        <field name="parent_id" ref="website_airproof.menu_blog"/>
+        <field name="parent_id" eval="ref('website.default_website').menu_id.id"/>
         <field name="sequence" type="int">31</field>
     </record>
     <record id="menu_blog_item_2" model="website.menu">
         <field name="name">Tutorials</field>
         <field name="url">/blog/tutorials-3</field>
         <field name="website_id">1</field>
-        <field name="parent_id" ref="website_airproof.menu_blog"/>
+        <field name="parent_id" eval="ref('website.default_website').menu_id.id"/>
         <field name="sequence" type="int">32</field>
     </record>
 

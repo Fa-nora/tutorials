@@ -103,4 +103,28 @@
         <field name="res_model">ir.ui.view</field>
         <field name="public" eval="True"/>
     </record>
+
+
+	<record id="img_shopping" model="ir.attachment">
+    <field name="name">Shopping icon</field>
+    <field name="datas" type="base64" file="website_airproof/static/src/img/content/icons/shopping.svg"/>
+    <field name="res_model">ir.ui.view</field>
+    <field name="public" eval="True"/>
+</record>
+
+
+
+
+	<record id="img_sticker" model="ir.attachment">
+    <field name="name">Sticker logo</field>
+    <field name="datas" type="base64" file="website_airproof/static/src/img/snippets/s_airproof_caroussel/sticker.webp"/>
+    <field name="res_model">ir.ui.view</field>
+    <field name="public" eval="True"/>
+</record>
+<record id="img_drone" model="ir.attachment">
+    <field name="name">Drone picture</field>
+    <field name="datas" type="base64" file="website_airproof/static/src/img/snippets/s_airproof_caroussel/drone.webp"/>
+    <field name="res_model">ir.ui.view</field>
+    <field name="public" eval="True"/>
+</record>
 </odoo>
