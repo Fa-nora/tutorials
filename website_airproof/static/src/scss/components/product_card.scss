@@ -1,16 +1,27 @@
 #wrapwrap {
+
     .o_carousel_product_card {
-        transition: all .2s ease-in-out;
-        border: none;
+        border: none !important;
+        border-radius: 12px;
+        overflow: hidden;
+
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        background-color: #ffffff;
 
         &:hover {
+
             transform: translate(-10px, -10px);
             background-color: #F0FDE3;
-	        // سبز روشن
+            // حفظ افکت ترکیب رنگ تصویر برای هماهنگی با رنگ سبز پس‌زمینه
             .o_carousel_product_card_img_top {
                 mix-blend-mode: multiply;
             }
         }
+
+        .o_carousel_product_card_body {
+            background-color: transparent !important;
+        }
+
 
         .card-body {
             background-color: transparent !important;

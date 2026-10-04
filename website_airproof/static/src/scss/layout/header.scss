@@ -1,21 +1,20 @@
 #wrapwrap {
-    // خط سبز
-    .navbar-light .navbar-nav .show > .nav-link,
-    .navbar-light .navbar-nav .nav-link.active {
-        border-bottom: 2px solid o-color('o-color-1');
+    // خط زیر منوی فعال
+    .nav-link.active,
+    .show > .nav-link,
+    .nav-item.active > .nav-link {
+        text-decoration: underline !important;
+        text-decoration-color: o-color('o-color-1') !important;
+        text-decoration-thickness: 2px !important;
+        text-underline-offset: 6px !important;
     }
 
-    // کشویی منو
+
     #top_menu_collapse .dropdown-toggle::after {
-        vertical-align: middle;
-        width: 10px;
-        height: 10px;
-        border: none;
-        content: '';
-        background-image: url('/website_airproof/static/src/img/content/icons/angle-down-solid.svg');
+        content: none !important;
     }
 
-    // خرید سبد
+    // سبد خرید  منو
     .my_cart_quantity,
     .my_wish_quantity {
         height: 18px;
@@ -23,9 +22,12 @@
         border-radius: 99px;
         background-color: o-color('o-color-1') !important;
         color: o-color('black') !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    // چین وسط لوگو
+    // تنظیم لوگو
     @media (min-width: 992px) {
         header .o_header_centered_logo {
             width: 50%;

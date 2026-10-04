@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data noupdate="1">
+        <record id="website_shape_airproof_waves" model="ir.attachment">
+            <field name="name">waves.svg</field>
+            <field name="public" eval="True"/>
+            <field name="type">binary</field>
 
+            <field name="datas" type="base64" file="website_airproof/static/shapes/airproof/waves.svg"/>
 
-    <record id="shape_waves" model="ir.attachment">
-        <field name="name">waves.svg</field>
-
-        <field name="datas" type="base64" file="website_airproof/static/shapes/airproof/waves.svg"/>
-        <field name="url">/html_editor/shape/airproof_website/waves.svg</field>
-        <field name="public" eval="True"/>
-    </record>
-
+            <field name="url">/html_editor/shape/website_airproof/airproof/waves.svg</field>
+        </record>
+    </data>
 </odoo>

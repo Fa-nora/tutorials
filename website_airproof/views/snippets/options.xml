@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- ثبت اسنیپت‌ها در Website Builder -->
+
     <template id="snippets" inherit_id="website.snippets" name="Airproof - Custom Snippets">
         <xpath expr="//snippets[@id='snippet_groups']/*[1]" position="before">
             <t snippet-group="airproof"
@@ -19,23 +19,30 @@
         </xpath>
     </template>
 
-    <!-- قالب سفارشی برای Dynamic Products -->
+<!--محصولات-->
     <template id="dynamic_filter_template_product_product_airproof" name="Airproof product template">
         <t t-foreach="records" t-as="data">
             <t t-set="record" t-value="data['_record']"/>
             <div class="o_carousel_product_card card h-100 w-100"
                  t-att-data-add2cart-rerender="data.get('_add2cart_rerender')">
 
+
                 <div t-if="is_sample" class="h5 o_ribbon_right bg-primary text-uppercase">Sample</div>
 
+                <!-- شناسه مخفی محصول برای فرآیند افزودن به سبد خرید -->
                 <input type="hidden" name="product-id" t-att-data-product-id="record.id"/>
 
+                <!-- تصویر محصول -->
                 <a class="o_carousel_product_img_link" t-att-href="record.website_url">
                     <img class="o_carousel_product_card_img_top card-img-top"
                          t-att-src="data['image_512']"
                          t-att-alt="record.display_name"/>
                 </a>
 
+                <!-- اضافه شدن  آخرین محصولات بازدید شده -->
+                <i t-if="data.get('_latest_viewed')" class="fa fa-trash o_carousel_product_remove js_remove"/>
+
+                <!-- بدنه اطلاعات کارت محصول -->
                 <div class="o_carousel_product_card_body card-body">
                     <a t-att-href="record.website_url"
                        class="text-decoration-none text-dark h-100 d-flex flex-column justify-content-between">

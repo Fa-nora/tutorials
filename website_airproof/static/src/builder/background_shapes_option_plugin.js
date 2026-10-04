@@ -1,3 +1,5 @@
+/** @odoo-module */
+
 import { Plugin } from "@html_editor/plugin";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
@@ -11,12 +13,13 @@ export class AirproofBackgroundShapesOptionPlugin extends Plugin {
                 label: _t("Airproof"),
 
                 subgroups: {
-                    airproof: {
-                        label: _t("Airproof"),
+                    airproof_shapes: {
+                        label: _t("Shapes"),
 
                         shapes: {
-                            "website_airproof/waves/01": {
-                                selectLabel: _t("Waves 01"),
+
+                            "website_airproof/airproof/waves": {
+                                selectLabel: _t("Waves"),
                             },
                         },
                     },

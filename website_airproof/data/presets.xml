@@ -1,24 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="website.header_call_to_action" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+	<!-- Header -->
+
+	<!-- Disable call to action -->
+	<record id="website.header_call_to_action" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
 
 	<!-- Disable default header -->
-<record id="website.template_header_default" model="ir.ui.view">
-    <field name="active" eval="False"/>
-</record>
+	<record id="website.template_header_default" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
 
+	<!-- Footer -->
 
-	<!-- FOOTER -->
-<!-- Disable Default Footer -->
-<record id="website.footer_custom" model="ir.ui.view">
-    <field name="active" eval="False"/>
-</record>
+	<!-- Disable default footer -->
+	<record id="website.footer_custom" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
 
-<!-- Enable Copyright -->
-<record id="website.footer_no_copyright" model="ir.ui.view">
-    <field name="active" eval="False"/>
-</record>
+	<!-- Copyright -->
+	<record id="website.footer_no_copyright" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
+
+	<!-- Product page -->
+
+	<!-- Wishlist: off on shop cards, on in product page -->
+	<record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+	<record id="website_sale_wishlist.product_add_to_wishlist" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
+
+	<!-- Categories filter: left side only -->
+	<record id="website_sale.products_categories" model="ir.ui.view">
+		<field name="active" eval="True"/>
+	</record>
+	<record id="website_sale.products_categories_top" model="ir.ui.view">
+		<field name="active" eval="False"/>
+	</record>
+
 </odoo>

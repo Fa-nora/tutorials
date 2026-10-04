@@ -1,5 +1,9 @@
-#wrapwrap .x_mouse_follower {
-    width: 72px;
-    height: 72px;
-    filter: blur(5px);
+#wrapwrap {
+    .x_mouse_follower {
+        width: 50px;
+        height: 50px;
+        filter: blur(5px);
+
+        z-index: 9999;
+    }
 }
