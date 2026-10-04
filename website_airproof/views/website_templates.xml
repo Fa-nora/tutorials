@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Custom Header for Odoo 19 -->
+
+    <!-- غیرفعال کردن پیش‌فرض‌ها -->
+    <record id="website.header_call_to_action" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_header_default" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.footer_custom" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.footer_no_copyright" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+
+    <!-- هدر Airproof -->
     <record id="header" model="ir.ui.view">
         <field name="name">Airproof header</field>
         <field name="type">qweb</field>
@@ -10,63 +25,80 @@
         <field name="arch" type="xml">
             <xpath expr="//header" position="replace">
                 <header id="top" data-anchor="true" data-name="Header" class="o_header_standard">
-                    <nav data-name="Navbar" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc o_cc1">
-                        <div class="container o_grid_header_3_cols d-grid align-items-center py-2">
+                    <nav class="navbar navbar-expand-lg navbar-light o_colored_level o_cc o_cc1 d-none d-lg-block">
+                        <div class="container d-grid align-items-center w-100 py-2 o_grid_header_3_cols">
 
-	                        <!-- Left: Menu -->
-	                        <div class="d-flex align-items-center">
-		                        <t t-call="website.navbar_nav">
-			                        <t t-set="_nav_class" t-valuef="navbar-nav"/>
-			                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
-				                        <t t-call="website.submenu">
-					                        <t t-set="item_class" t-valuef="nav-item"/>
-					                        <t t-set="link_class" t-valuef="nav-link"/>
-				                        </t>
-			                        </t>
-		                        </t>
-	                        </div>
+                            <!-- ستون چپ: منوها -->
+                            <ul class="navbar-nav flex-row flex-wrap align-items-center gap-3 mb-0">
+                                <li class="nav-item dropdown">
+                                    <a href="/shop" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                        Waterproof drones
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/shop">Airproof Mini</a></li>
+                                        <li><a class="dropdown-item" href="/shop">Airproof Pro</a></li>
+                                        <li><a class="dropdown-item" href="/shop">Airproof Robin</a></li>
+                                        <li><a class="dropdown-item" href="/shop">Airproof Falcon</a></li>
+                                        <li><a class="dropdown-item" href="/shop">Airproof Eagle</a></li>
+                                    </ul>
+                                </li>
 
-                            <!-- Center: Logo -->
+
+                                <li class="nav-item">
+                                    <a href="/about-us" class="nav-link">About us</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                        Blog
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/blog">Our latest news</a></li>
+                                        <li><a class="dropdown-item" href="/blog">Tutorials</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a href="/contactus" class="nav-link">Contact us</a>
+                                </li>
+                            </ul>
+
+                            <!-- ستون وسط: لوگو -->
                             <div class="d-flex justify-content-center">
                                 <t t-call="website.placeholder_header_brand">
-                                    <t t-set="_link_class" t-valuef="navbar-brand"/>
+                                    <t t-set="_link_class" t-valuef="navbar-brand mx-auto"/>
                                 </t>
                             </div>
 
-                            <!-- Right: Cart + User -->
-                            <div class="d-flex justify-content-end align-items-center gap-2">
+                            <!-- ستون راست: سبد + ورود -->
+                            <ul class="navbar-nav flex-row align-items-center gap-2 justify-content-end mb-0">
                                 <t t-call="website_sale.header_cart_link">
                                     <t t-set="_icon" t-value="True"/>
                                     <t t-set="_item_class" t-valuef="nav-item"/>
                                     <t t-set="_link_class" t-valuef="nav-link"/>
                                 </t>
-
                                 <t t-call="portal.placeholder_user_sign_in">
                                     <t t-set="_link_class" t-valuef="btn btn-primary btn-sm rounded-sm px-3"/>
                                 </t>
-
                                 <t t-call="portal.user_dropdown">
                                     <t t-set="_user_name" t-value="true"/>
                                     <t t-set="_icon" t-value="true"/>
                                     <t t-set="_item_class" t-valuef="dropdown"/>
                                     <t t-set="_link_class" t-valuef="btn btn-primary btn-sm rounded-sm"/>
                                 </t>
-                            </div>
+                            </ul>
 
                         </div>
                     </nav>
-
-                    <!-- Mobile Header -->
                     <t t-call="website.template_header_mobile"/>
                 </header>
             </xpath>
         </field>
     </record>
 
-
-
-
-	<!-- فوتر سفارشی ...............-->
+    <!-- فوتر Airproof -->
     <record id="footer" model="ir.ui.view">
         <field name="name">Airproof Footer</field>
         <field name="type">qweb</field>
@@ -78,7 +110,10 @@
                 <div id="footer" class="oe_structure" t-ignore="true" t-if="not no_footer">
 
                     <!-- خبرنامه -->
-                    <section class="s_newsletter_block s_newsletter_list o_colored_level o_cc o_cc4 pt48 pb48" data-list-id="1" data-snippet="s_newsletter_block" data-name="Newsletter Block">
+                    <section class="s_newsletter_block s_newsletter_list o_colored_level o_cc o_cc4 pt48 pb48"
+                             data-list-id="1"
+                             data-snippet="s_newsletter_block"
+                             data-name="Newsletter Block">
                         <div class="container">
                             <div class="row">
                                 <div class="pt8 pb8 o_colored_level col-lg-6">
@@ -86,7 +121,11 @@
                                     <p>Don't miss the newsletter with news and special offers!</p>
                                 </div>
                                 <div class="pt40 pb8 o_colored_level col-lg-6">
-                                    <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-vxml="001" data-list-id="0" data-name="Newsletter Form" data-snippet="s_newsletter_subscribe_form">
+                                    <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                                         data-vxml="001"
+                                         data-list-id="0"
+                                         data-name="Newsletter Form"
+                                         data-snippet="s_newsletter_subscribe_form">
                                         <div class="js_subscribed_wrap d-none">
                                             <p class="text-end text-success">
                                                 <i class="fa fa-check-circle-o" role="img"/> Thanks for registering!
@@ -104,18 +143,15 @@
                         </div>
                     </section>
 
-                    <!-- محتوای اصلی فوتر -->
+                    <!-- محتوای فوتر -->
                     <section class="s_text_block pt80 pb24 bg-black text-white" data-snippet="s_text_block" data-name="Text">
                         <div class="container">
                             <div class="row">
-                                <!-- Description -->
                                 <div class="col col-lg-6 pb40 pe-md-5">
                                     <p class="small">
                                         Creativity is at the heart of every dream. Every idea, every groundbreaking leap that changes our world starts with the vision of talented creators. At Airproof, we give these creators the tools they need to bring their ideas to life.
                                     </p>
                                 </div>
-
-                                <!-- محصولات ما -->
                                 <div class="col-6 col-md-4 col-lg-2 pb24">
                                     <p class="mb-4 text-muted small">Our drones</p>
                                     <ul class="list-unstyled small">
@@ -126,8 +162,6 @@
                                         <li class="mb-2"><a href="/shop">Airproof Eagle</a></li>
                                     </ul>
                                 </div>
-
-                                <!-- لوازم جانبی ما-->
                                 <div class="col-6 col-md-4 col-lg-2 pb24">
                                     <p class="mb-4 text-muted small">Our accessories</p>
                                     <ul class="list-unstyled small">
@@ -138,45 +172,41 @@
                                         <li class="mb-2"><a href="/shop">Stickers</a></li>
                                     </ul>
                                 </div>
-
-                                <!--ارتباط با ما -->
                                 <div class="col col-md-4 col-lg-2 pb24">
                                     <p class="mb-4 text-muted small">Contact us</p>
                                     <p class="mb-4 small">Airproof<br/>10 Rue Van Hove<br/>1000 Brussel</p>
                                     <ul class="list-unstyled">
-                                        <li class="mb-2">
-                                            <a href="tel:+3222903490" class="small">+32 2 290 34 90</a>
-                                        </li>
-                                        <li>
-                                            <a href="mailto:contact@airproof.com" class="small">contact@airproof.com</a>
-                                        </li>
+                                        <li class="mb-2"><a href="tel:+3222903490" class="small">+32 2 290 34 90</a></li>
+                                        <li><a href="mailto:contact@airproof.com" class="small">contact@airproof.com</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </section>
+
                 </div>
             </xpath>
         </field>
     </record>
 
-    <!--  کپی‌رایت و شبکه‌های اجتماعی قسمت پایین فوتر -->
-   <template id="copyright" inherit_id="website.layout">
-    <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
-        <div class="o_footer_copyright o_colored_level o_cc  bg-black text-white">
-            <div class="container pt24 pb24">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-12 col-md-6">
-                        <a target="_blank" href="/website/social/facebook" class="me-2  text-white"><i class="fa fa-facebook"/></a>
-                        <a target="_blank" href="/website/social/youtube" class="me-2   text-white"><i class="fa fa-youtube"/></a>
-                        <a target="_blank" href="/website/social/instagram"  class="me-2   text-white" ><i class="fa fa-instagram"/></a>
-                    </div>
-                    <div class="col-12 col-md-6 text-end">
-                        <span class="small text-white">© Airproof. All rights reserved.</span>
+    <!-- کپی‌رایت -->
+    <template id="copyright" inherit_id="website.layout">
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
+            <div class="o_footer_copyright o_colored_level o_cc bg-black text-white">
+                <div class="container pt24 pb24">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-12 col-md-6">
+                            <a target="_blank" href="/website/social/facebook" class="me-2 text-white"><i class="fa fa-facebook"/></a>
+                            <a target="_blank" href="/website/social/youtube" class="me-2 text-white"><i class="fa fa-youtube"/></a>
+                            <a target="_blank" href="/website/social/instagram" class="me-2 text-white"><i class="fa fa-instagram"/></a>
+                        </div>
+                        <div class="col-12 col-md-6 text-end">
+                            <span class="small text-white">© Airproof. All rights reserved.</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </xpath>
-</template>
+        </xpath>
+    </template>
+
 </odoo>

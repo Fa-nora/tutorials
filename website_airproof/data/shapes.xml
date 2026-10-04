@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="shape_waves" model="ir.attachment">
+        <field name="name">waves.svg</field>
+
+        <field name="datas" type="base64" file="website_airproof/static/shapes/airproof/waves.svg"/>
+        <field name="url">/html_editor/shape/airproof_website/waves.svg</field>
+        <field name="public" eval="True"/>
+    </record>
+
+</odoo>
