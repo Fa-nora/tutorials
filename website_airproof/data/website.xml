@@ -6,7 +6,5 @@
 		<field name="logo" type="base64" file="website_airproof/static/src/img/content/branding/airproof-logo.svg"/>
 		<field name="favicon" type="base64" file="website_airproof/static/description/airproof-favicon.png"/>
 		<field name="shop_ppr">3</field>
-		<field name="shop_ppg">18</field>
-		<field name="shop_gap">16px</field>
 	</record>
 </odoo>

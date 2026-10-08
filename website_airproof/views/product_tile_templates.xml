@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="products_item_discover_more" inherit_id="website_sale.products_item" name="Airproof - Products Item Discover More">
+        <!--  توضیحات و قیمت کارت محصول   -->
+        <xpath expr="//div[contains(@class, 'o_wsale_product_information_text')]|//div[contains(@class, 'o_wsale_product_information')]" position="inside">
+            <!-- ساختار دکمه Discover more -->
+            <div class="o_airproof_discover_more pt-3 pb-1 text-start">
+                <span class="small text-dark fw-bold text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">
+                    Discover more
+                    <img src="/website_airproof/static/src/img/content/icons/arrow-small.svg"
+                         alt="arrow"
+                         class="ms-1 alignment-baseline"
+                         style="width: 12px; height: 12px; transition: transform 0.2s ease-in-out;"/>
+                </span>
+            </div>
+        </xpath>
+    </template>
+</odoo>

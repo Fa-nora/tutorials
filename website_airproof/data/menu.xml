@@ -20,31 +20,31 @@
 						<div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
 							<a href="/shop/airproof-mini-1" class="nav-link p-0" data-name="Menu Item">
 								<img src="/web/image/website_airproof.img_mini" class="img-fluid img" alt="Airproof Mini"/>
-								<div class="p-2"><font class="fw-bold">Airproof Mini</font></div>
+								<div class=" d-block p-2"><font class="fw-bold">Airproof Mini</font></div>
 							</a>
 						</div>
 						<div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
 							<a href="/shop/airproof-pro-2" class="nav-link p-0" data-name="Menu Item">
 								<img src="/web/image/website_airproof.img_pro" class="img-fluid img" alt="Airproof Pro"/>
-								<div class="p-2"><font class="fw-bold">Airproof Pro</font></div>
+								<div class="d-block p-2"><font class="fw-bold">Airproof Pro</font></div>
 							</a>
 						</div>
 						<div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
 							<a href="/shop/airproof-robin-3" class="nav-link p-0" data-name="Menu Item">
 								<img src="/web/image/website_airproof.img_robin" class="img-fluid img" alt="Airproof Robin"/>
-								<div class="p-2"><font class="fw-bold">Airproof Robin</font></div>
+								<div class="d-block p-2"><font class="fw-bold">Airproof Robin</font></div>
 							</a>
 						</div>
 						<div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
 							<a href="/shop/airproof-falcon-4" class="nav-link p-0" data-name="Menu Item">
 								<img src="/web/image/website_airproof.img_falcon" class="img-fluid img" alt="Airproof Falcon"/>
-								<div class="p-2"><font class="fw-bold">Airproof Falcon</font></div>
+								<div class="d-block p-2"><font class="fw-bold">Airproof Falcon</font></div>
 							</a>
 						</div>
 						<div class="col-6 col-sm text-center pt8 pb8 o_colored_level">
 							<a href="/shop/airproof-eagle-5" class="nav-link p-0" data-name="Menu Item">
 								<img src="/web/image/website_airproof.img_eagle" class="img-fluid img" alt="Airproof Eagle"/>
-								<div class="p-2"><font class="fw-bold">Airproof Eagle</font></div>
+								<div class="d-block p-2"><font class="fw-bold">Airproof Eagle</font></div>
 							</a>
 						</div>
 					</div>
