@@ -1,75 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!--  تغییر آیکون سبد خرید در هدر -->
+    <!-- ۱. اصلاح آیکون سبد خرید در منوی هدر سایت با تصویر SVG -->
     <template id="header_cart_link" inherit_id="website_sale.header_cart_link" name="Airproof - Cart icon">
         <xpath expr="//i" position="replace">
-            <img src="/website_airproof/static/src/img/content/icons/shopping.svg" alt="shopping icon"/>
+            <img src="/website_airproof/static/src/img/content/icons/shopping.svg" alt="shopping icon" style="width: 20px; height: 20px;"/>
         </xpath>
     </template>
 
-    <!--  افزودن بنر بالای صفحه فروشگاه -->
+    <!-- ۲. شخصی‌سازی صفحه فروشگاه: افزودن بنر بالای محصولات -->
     <template id="products" inherit_id="website_sale.products" name="Airproof - Products">
-        <xpath expr="//div[@id='oe_structure_website_sale_products_1']" position="inside">
-            <!-- اصلاح آدرس تصویر به مسیر فیزیکی دقیق پوسته شما در   -->
-            <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88" data-vcss="001" data-snippet="s_title"
+        <xpath expr="//*[@id='oe_structure_website_sale_products_1']" position="inside">
+            <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88"
+                     data-snippet="s_title"
                      style="background-image: url('/website_airproof/static/src/img/content/topview3.webp'); background-size: cover; background-position: center;">
-                <div class="o_we_bg_filter bg-black-50" style="opacity:0.5;"/>
-                <div class="container text-center"><h2 class="text-white">Discover our amazing products</h2></div>
+                <div class="o_we_bg_filter bg-black-50" style="opacity: 0.5;"/>
+                <div class="container text-center">
+                    <h2 class="text-white display-4 fw-bold">Discover our amazing products</h2>
+                </div>
             </section>
         </xpath>
-        <xpath expr="//div[contains(@class,'products_header')]" position="attributes">
+        <xpath expr="//div[contains(@class, 'products_header')]" position="attributes">
             <attribute name="class" add="justify-content-end" remove="justify-content-between" separator=" "/>
         </xpath>
     </template>
 
-    <!--  حذف کادر جستجوی پیش‌فرض -->
+    <!-- ۳. حذف کامل باکس جستجوی پیش‌فرض صفحه فروشگاه -->
     <template id="search" inherit_id="website_sale.search" name="Airproof - Search">
         <xpath expr="//t[@t-call='website.website_search_box_input']" position="replace"/>
     </template>
 
-    <!--  افزودن Discover more به کارت‌ها -->
-    <template id="products_item" inherit_id="website_sale.products_item" name="Airproof - Products item">
-        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="inside">
-            <span class="small text-dark pt-3 pb-1 d-block">Discover more
-                <img src="/website_airproof/static/src/img/content/icons/arrow-small.svg" alt="" class="ms-2"/>
-            </span>
-        </xpath>
-    </template>
-
-    <!--  ایجاد موقعیت  -->
+    <!-- ۴. تزریق خودکار بخش تبلیغاتی شش دلیل به زیر محصول به همراه آرس دقیق استاتیک امواج فیروزه‌ای -->
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">
-	    <xpath expr="//section[@id='product_detail']" position="after">
-		    <div id="oe_structure_layout_airproof_products" class="oe_structure oe_empty" data-editor-message="DROP ZONE VISIBLE ACROSS ALL PRODUCTS"/>
-	    </xpath>
-    </template>
-
-    <!--  جایگزینی آیکون دکمه سبد خرید -->
-	<template id="cta_wrapper" inherit_id="website_sale.cta_wrapper" name="Airproof - CTA">
-        <xpath expr="//a[@id='add_to_cart']/i" position="replace">
-            <img src="/website_airproof/static/src/img/content/icons/shopping.svg" alt="Shopping icon" class="img img-fluid me-1"/> Add to cart
+        <xpath expr="//section[@id='product_detail']" position="after">
+            <section class="s_text_image o_colored_level pt80 pb80"
+                     data-snippet="s_text_image"
+                     data-name="Image - Text"
+                     style="background-color: #E8F5C8; background-image: url('/website_airproof/static/shapes/airproof/waves.svg'); background-size: cover; background-position: center;">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- ستون سمت چپ: متون تیتر و پاراگراف‌ها کاملاً منطبق بر عکس تمرین -->
+                        <div class="col-lg-6 pt16 pb16 o_colored_level text-start">
+                            <h2 class="display-5 fw-bold text-dark mb-3">Six reasons to buy the Airproof Mini.</h2>
+                            <p class="lead text-muted mb-4" style="line-height: 1.6;">
+                                Airproof Mini is
+                                <span class="fw-bold px-1 rounded" style="background-color: #CEF8A1; color: #000000;">more than just a mini drone.</span>
+                                The lightweight body supports powerful features, making it a great choice for first-time flyers.
+                            </p>
+                            <a href="/shop" class="btn btn-dark btn-lg rounded-pill px-4">Learn more →</a>
+                        </div>
+                        <!-- ستون سمت راست: لود تصویر پهپاد با بک‌اِند آبی با آدرس استاتیک -->
+                        <div class="col-lg-6 pt16 pb16 o_colored_level text-center">
+                            <img src="/website_airproof/static/src/img/content/drone-bluebg.webp"
+                                 class="img img-fluid mx-auto rounded-3"
+                                 alt="Airproof Mini"
+                                 style="max-height: 350px; object-fit: contain;"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </xpath>
     </template>
 
-    <!--. جدول مشخصات فنی محصول  -->
+    <!-- ۵. تغییر شکل و آیکون دکمه سبد خرید از طریق کلاس‌های بومی فرم اودو ۱۹ برای جلوگیری از خطای xpath -->
+    <template id="product_buy_now_custom" inherit_id="website_sale.product_buy_now" name="Airproof - Add to Cart Fix">
+        <xpath expr="//a[contains(@class, 'btn-primary')]" position="inside">
+            <style>
+                .o_product_page_buy_now i, #add_to_cart i { display: none !important; }
+            </style>
+            <img src="/website_airproof/static/src/img/content/icons/shopping.svg" alt="Shopping icon" class="img img-fluid me-2" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle;"/>
+        </xpath>
+    </template>
+
+    <!-- ۶. قرار دادن جدول مشخصات فنی (Specifications) محصول در آکاردئون تاشوی بومی اودو ۱۹ -->
     <template id="product_accordion" inherit_id="website_sale.product_accordion" name="Airproof - Specs">
         <xpath expr="//div[@id='product_accordion']" position="inside">
             <div class="accordion-item">
-                <div t-if="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()" class="accordion-header my-0 h6">
-                    <button class="accordion-button collapsed fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#specifications">Specifications</button>
+                <div t-if="product.valid_product_template_attribute_line_ids"
+                     class="accordion-header my-0 h6" id="heading_specifications">
+                    <button class="accordion-button collapsed fw-medium" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#specifications"
+                            aria-expanded="false" aria-controls="specifications">
+                        Specifications
+                    </button>
                 </div>
-                <div id="specifications" class="accordion-collapse collapse" data-bs-parent="#product_accordion">
-                    <div class="accordion-body pt-0">
+                <div id="specifications" class="accordion-collapse collapse" aria-labelledby="heading_specifications"
+                     data-bs-parent="#product_accordion">
+                    <div class="accordion-body pt-3">
                         <div id="product_attributes_simple">
-                            <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
-                            <table t-attf-class="table table-sm text-muted {{'' if single_value_attributes else 'd-none'}}">
-                                <t t-foreach="single_value_attributes" t-as="attribute">
+                            <table class="table table-sm text-muted">
+                                <t t-foreach="product.valid_product_template_attribute_line_ids" t-as="attribute_line">
                                     <tr>
+                                        <td class="border-0 fw-bold" style="width: 30%;"><span t-field="attribute_line.attribute_id.name"/>:</td>
                                         <td class="border-0">
-                                            <span t-field="attribute.name"/>:
-                                            <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
-                                                <span t-field="ptal.product_template_value_ids._only_active().name"/>
-                                                <t t-if="not ptal_last">, </t>
+                                            <t t-foreach="attribute_line.product_template_value_ids" t-as="value">
+                                                <span t-field="value.name"/><t t-if="not value_last">, </t>
                                             </t>
                                         </td>
                                     </tr>
@@ -82,7 +107,7 @@
         </xpath>
     </template>
 
-    <!--  وسط‌چین کردن  گالری تصاویر -->
+    <!-- ۷. اصلاح و تراز عمودی نشانگرهای کاروسل تصاویر گالری در اودو ۱۹ -->
     <template id="carousel_product_indicators" inherit_id="website_sale.carousel_product_indicators" name="Airproof - Carousel">
         <xpath expr="//ol" position="attributes">
             <attribute name="t-att-class" add="' justify-content-center p-3'" separator=" + "/>
@@ -92,16 +117,17 @@
         </xpath>
     </template>
 
-    <!-- محصولات پیشنهادی دیگر -->
+    <!-- ۸. شخصی‌سازی عنوان بخش محصولات پیشنهادی فیکس اودو ۱۹ -->
     <template id="alternative_products" inherit_id="website_sale.alternative_products" name="Airproof - Alternative">
         <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']" position="before">
-            <section class="s_title pt64 pb64 o_colored_level" data-vcss="001" data-snippet="s_title" style="background-color: #E6E7E8;" t-if="product.alternative_product_ids">
-                <div class="container s_allow_columns"><h2 class="text-center fw-bold">You might also like</h2></div>
+            <section class="s_title pt48 pb32 o_colored_level" data-snippet="s_title"
+                     style="background-color: #F5F5F5;"
+                     t-if="product.alternative_product_ids">
+                <div class="container s_allow_columns">
+                    <h2 class="text-center fw-bold text-dark display-6">You might also like</h2>
+                </div>
             </section>
         </xpath>
     </template>
-
-
-
 
 </odoo>

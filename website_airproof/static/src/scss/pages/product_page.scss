@@ -1,0 +1,19 @@
+// website_airproof/static/src/scss/pages/product_page.scss
+
+#wrapwrap {
+    // اصلاح کلاس گالری تصاویر صفحه محصول کاملاً
+    #o-carousel-product .carousel-indicators button {
+        box-shadow: 0 0 15px #CDCDCD !important;
+        border-radius: 5px !important;
+        overflow: hidden !important;
+
+        // تراز کردن تصویر پوششی داخل دکمه‌های گالری
+        .o_image_64_cover, 
+        img {
+            border-radius: 5px !important;
+            object-fit: cover !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}

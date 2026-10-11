@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- تغییر اتوماتیک و کدیِ آکون قلب توپر به قلب توخالیِ  در هدر وب‌سایت  -->
+    <template id="header_wishlist_link"
+              inherit_id="website_sale_wishlist.header_wishlist_link"
+              name="Airproof - Wishlist icon">
+        <!-- هدف قرار دادن کلاس بومی آیکون قلب در ساختار منوی بالا -->
+        <xpath expr="//i[contains(@class, 'fa-heart')]" position="attributes">
+            <!-- حذف قلب توپر قدیمی و جایگزینی با قلب دورخط‌دار مینیمال اِیرپروف -->
+            <attribute name="class" add="fa-heart-o" remove="fa-heart" separator=" "/>
+        </xpath>
+    </template>
+</odoo>
