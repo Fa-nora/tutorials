@@ -1,74 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <data noupdate="1">
 
-    <!-- HEADER -->
-    <record id="website.header_call_to_action" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website.template_header_default" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website.header_text_element" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website.header_search_box" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website.header_social_links" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+        <!-- غیرفعال کردن دکمه پیش‌فرض فراخوان عمل (Call to Action) در هدر -->
+        <record id="website.header_call_to_action" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
-    <!-- FOOTER -->
-    <record id="website.footer_custom" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website.footer_no_copyright" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
+        <!-- غیرفعال کردن لایوت و ساختار هدر پیش‌فرض و سنتی اودو -->
+        <record id="website.template_header_default" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
-    <!-- SHOP -->
-    <record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website_sale.products_categories" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record>
-    <record id="website_sale.products_categories_top" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website_sale.option_collapse_products_categories" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record>
-    <record id="website_sale.products_attributes" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record>
+        <!-- مخفی کردن المان متنی اضافی (مثل شعار یا شماره تلفن پیش‌فرض) در هدر -->
+        <record id="website.header_text_element" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
-    <!-- PRODUCT PAGE -->
+        <!-- حذف و غیرفعال کردن باکس جستجوی پیش‌فرض در منوی بالای سایت -->
+        <record id="website.header_search_box" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
-	<!-- فعال‌سازی دکمه علاقه‌مندی‌ها در داخل صفحه خود محصول -->
-    <record id="website_sale_wishlist.product_add_to_wishlist" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record>
+        <!-- غیرفعال کردن آیکون شبکه‌های اجتماعی پیش‌فرض در نوار بالایی هدر -->
+        <record id="website.header_social_links" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
-	<!-- غیرفعال کردن انتخابگر تعداد محصول (Quantity) -->
-    <record id="website_sale.product_quantity" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website_sale.product_terms_and_conditions" model="ir.ui.view">
-        <field name="active" eval="False"/>
-    </record>
-    <record id="website_sale.accordion_more_information" model="ir.ui.view">
-        <field name="active" eval="True"/>
-    </record>
+        <!-- فعال‌سازی منوی کشویی انتخاب زبان  -->
+        <record id="website.header_language_selector" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- نمایش منوی زبان فقط به صورت متنی  -->
+        <record id="website.header_language_selector_flag" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+
+        <!-- غیرفعال کردن فوتر پیش‌فرض و شلوغ سیستم جهت جایگزینی با لایوت خلوت Airproof -->
+        <record id="website.footer_custom" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- روشن نگه داشتن بخش کپی‌رایت پایین فوتر (فعال بودن لایوت بدون حذف کپی‌رایت) -->
+        <record id="website.footer_no_copyright" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
 
 
+        <!-- فعال‌سازی دکمه لیست علاقه‌مندی‌ها (Wishlist) در سیستم فروشگاه -->
+        <record id="website_sale_wishlist.add_to_wishlist" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- غیرفعال کردن دکمه علاقه‌مندی روی کارت‌های کوچک محصول در صفحه اصلی شاپ -->
+        <record id="website_sale_wishlist.product_add_to_wishlist" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- غیرفعال کردن انتخابگر تعداد کالا (Quantity) در صفحه محصول جهت خلوت شدن لایوت خرید -->
+        <record id="website_sale.product_quantity" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- مخفی کردن بلاک پیش‌فرض متنی شرایط و قوانین (Terms and Conditions) زیر دکمه خرید -->
+        <record id="website_sale.product_terms_and_conditions" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- فعال‌سازی آکاردئون بومی اطلاعات بیشتر (More Information) در صفحه کالا -->
+        <record id="website_sale.accordion_more_information" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- فعال کردن سایدبار دسته‌بندی محصولات (Categories) در سمت چپ صفحه فروشگاه -->
+        <record id="website_sale.products_categories" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- غیرفعال کردن نمایش منوی دسته‌بندی‌ها در بالای گرید محصولات فروشگاه -->
+        <record id="website_sale.products_categories_top" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- فعال‌سازی منوی تاشو و درختی دسته‌بندی‌ها (Collapse) برای ناوبری شیک‌تر کاربران -->
+        <record id="website_sale.option_collapse_products_categories" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- غیرفعال کردن حالت باز شدن خودکار و بازگشتی تمام زیرمجموعه‌های منوی درخت ویژگی‌ها -->
+        <record id="website_sale.option_collapse_categories_recursive" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- فعال کردن فیلتر ویژگی‌های کالا (Attributes) مثل رنگ، وزن و سرعت در نوار سمت چپ شاپ -->
+        <record id="website_sale.products_attributes" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- غیرفعال کردن نمایش دکمه فیلتر صفات کالا در بالای گرید فروشگاه -->
+        <record id="website_sale.products_attributes_top" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- غیرفعال کردن فیلتر پیش‌فرض رنج قیمت (Price Filter Slider) در نوار سایدبار -->
+        <record id="website_sale.filter_products_price" model="ir.ui.view">
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- مخفی کردن فیلتر تگ‌های محصول در سایدبار جهت حفظ لایوت مینیمال پهپادها -->
+        <record id="website_sale.filter_products_tags" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- حذف دکمه‌های مقایسه کالا (Compare) در دایرکتوری و کارت‌های گرید شاپ -->
+        <record id="website_sale_comparison.product_add_to_compare" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- حذف و غیرفعال کردن کامل ماژول مقایسه محصولات در داخل صفحه جزئیات کالا -->
+        <record id="website_sale_comparison.add_to_compare" model="ir.ui.view">
+            <field name="active" eval="False"/>
+        </record>
 
 
-<!--    <record id="website_sale.product_custom_text" model="ir.ui.view">-->
-<!--        <field name="active" eval="False"/>-->
-<!--    </record>-->
 
 
 
+
+
+
+    <!-- دسته‌ها -->
+    <record id="cat_drones" model="product.public.category">
+        <field name="name">Drones</field>
+        <field name="sequence" eval="1"/>
+    </record>
+    <record id="cat_camera_drones" model="product.public.category">
+        <field name="name">Camera drones</field>
+        <field name="parent_id" ref="cat_drones"/>
+        <field name="sequence" eval="1"/>
+    </record>
+    <record id="cat_waterproof_drones" model="product.public.category">
+        <field name="name">Waterproof drones</field>
+        <field name="parent_id" ref="cat_drones"/>
+        <field name="sequence" eval="2"/>
+    </record>
+    <record id="cat_accessories" model="product.public.category">
+        <field name="name">Accessories</field>
+        <field name="sequence" eval="2"/>
+    </record>
+    <record id="cat_warranties" model="product.public.category">
+        <field name="name">Warranties</field>
+        <field name="sequence" eval="3"/>
+    </record>
+
+    <!-- Attribute نمونه -->
+    <record id="attr_weight" model="product.attribute">
+        <field name="name">Weight</field>
+        <field name="display_type">radio</field>
+        <field name="create_variant">no_variant</field>
+    </record>
+    <record id="attr_weight_150" model="product.attribute.value">
+        <field name="name">150g</field>
+        <field name="attribute_id" ref="attr_weight"/>
+    </record>
+    <record id="attr_weight_200" model="product.attribute.value">
+        <field name="name">200g</field>
+        <field name="attribute_id" ref="attr_weight"/>
+    </record>
+    <record id="attr_weight_400" model="product.attribute.value">
+        <field name="name">400g</field>
+        <field name="attribute_id" ref="attr_weight"/>
+    </record>
+
+
+    </data>
 </odoo>

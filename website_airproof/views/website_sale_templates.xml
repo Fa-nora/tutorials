@@ -8,7 +8,7 @@
         </xpath>
     </template>
 
-    <!-- ۲. شخصی‌سازی صفحه فروشگاه: افزودن بنر بالای محصولات -->
+    <!--  شخصی‌سازی صفحه فروشگاه: افزودن بنر بالای محصولات -->
     <template id="products" inherit_id="website_sale.products" name="Airproof - Products">
         <xpath expr="//*[@id='oe_structure_website_sale_products_1']" position="inside">
             <section class="s_title bg-black-50 o_colored_level s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center pt88 pb88"
@@ -62,7 +62,7 @@
         </xpath>
     </template>
 
-    <!-- ۵. تغییر شکل و آیکون دکمه سبد خرید از طریق کلاس‌های بومی فرم اودو ۱۹ برای جلوگیری از خطای xpath -->
+    <!--  تغییر شکل و آیکون دکمه سبد خرید از طریق کلاس‌های بومی فرم  برای جلوگیری از خطای xpath -->
     <template id="product_buy_now_custom" inherit_id="website_sale.product_buy_now" name="Airproof - Add to Cart Fix">
         <xpath expr="//a[contains(@class, 'btn-primary')]" position="inside">
             <style>
@@ -72,7 +72,7 @@
         </xpath>
     </template>
 
-    <!-- ۶. قرار دادن جدول مشخصات فنی (Specifications) محصول در آکاردئون تاشوی بومی اودو ۱۹ -->
+    <!--  قرار دادن جدول مشخصات فنی (Specifications) محصول در آکاردئون تاشوی بومی  -->
     <template id="product_accordion" inherit_id="website_sale.product_accordion" name="Airproof - Specs">
         <xpath expr="//div[@id='product_accordion']" position="inside">
             <div class="accordion-item">
@@ -107,7 +107,7 @@
         </xpath>
     </template>
 
-    <!-- ۷. اصلاح و تراز عمودی نشانگرهای کاروسل تصاویر گالری در اودو ۱۹ -->
+    <!-- اصلاح و تراز عمودی نشانگرهای کاروسل تصاویر گالری در  -->
     <template id="carousel_product_indicators" inherit_id="website_sale.carousel_product_indicators" name="Airproof - Carousel">
         <xpath expr="//ol" position="attributes">
             <attribute name="t-att-class" add="' justify-content-center p-3'" separator=" + "/>
@@ -117,7 +117,7 @@
         </xpath>
     </template>
 
-    <!-- ۸. شخصی‌سازی عنوان بخش محصولات پیشنهادی فیکس اودو ۱۹ -->
+    <!-- شخصی‌سازی عنوان بخش محصولات پیشنهادی فیکس  -->
     <template id="alternative_products" inherit_id="website_sale.alternative_products" name="Airproof - Alternative">
         <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']" position="before">
             <section class="s_title pt48 pb32 o_colored_level" data-snippet="s_title"
@@ -131,3 +131,4 @@
     </template>
 
 </odoo>
+

@@ -1,0 +1,569 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_airproof
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-11 07:06+0000\n"
+"PO-Revision-Date: 2026-10-11 07:06+0000\n"
+"Last-Translator: \n"
+"Language-Team: Persian\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "4K Video"
+msgstr "ویدیو 4K"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "4K image"
+msgstr "تصویر 4K"
+
+#. module: website_airproof
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "<font class=\"fw-bold\">Airproof Eagle</font>"
+msgstr "<font class=\"fw-bold\">ایرپروف ایگل</font>"
+
+#. module: website_airproof
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "<font class=\"fw-bold\">Airproof Falcon</font>"
+msgstr "<font class=\"fw-bold\">ایرپروف فالکون</font>"
+
+#. module: website_airproof
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "<font class=\"fw-bold\">Airproof Mini</font>"
+msgstr "<font class=\"fw-bold\">ایرپروف مینی</font>"
+
+#. module: website_airproof
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "<font class=\"fw-bold\">Airproof Pro</font>"
+msgstr "<font class=\"fw-bold\">ایرپروف پرو</font>"
+
+#. module: website_airproof
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "<font class=\"fw-bold\">Airproof Robin</font>"
+msgstr "<font class=\"fw-bold\">ایرپروف رابین</font>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_anim_from_bottom o_visible\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t    One step<br/>beyond<br/>the horizon\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>"
+msgstr ""
+"<span class=\"o_animated_text o_animate o_anim_fade_in o_anim_from_bottom o_visible\">\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t    یک قدم<br/>فراتر از<br/>افق\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "<span class=\"s_website_form_label_content\">Company name</span>"
+msgstr "<span class=\"s_website_form_label_content\">نام شرکت</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Email address</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">آدرس ایمیل</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Message</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">پیام</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">Name</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">نام</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"<span class=\"s_website_form_label_content\">VAT</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+msgstr ""
+"<span class=\"s_website_form_label_content\">مالیات بر ارزش افزوده</span>\n"
+"                                                                <span class=\"s_website_form_mark\"> *</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "<span class=\"small text-white\">© Airproof. All rights reserved.</span>"
+msgstr "<span class=\"small text-white\">© ایرپروف. تمامی حقوق محفوظ است.</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "<span class=\"text-o-color-1 text-uppercase\">The sky is the limit</span>"
+msgstr "<span class=\"text-o-color-1 text-uppercase\">آسمان حد نهایی است</span>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"<strong style=\"font-size: 16px;\">1000+</strong>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\treviews"
+msgstr ""
+"<strong style=\"font-size: 16px;\">+۱۰۰۰</strong>\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tنظر"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "<strong style=\"font-size: 16px;\">1000+</strong> reviews"
+msgstr "<strong style=\"font-size: 16px;\">+۱۰۰۰</strong> نظر"
+
+#. module: website_airproof
+#. odoo-javascript
+#: code:addons/website_airproof/static/src/builder/background_shapes_option_plugin.js:0
+#: code:addons/website_airproof/static/src/builder/image_shapes_option_plugin.js:0
+#: model_terms:ir.ui.view,arch_db:website_airproof.new_page_template_groups
+#: model_terms:ir.ui.view,arch_db:website_airproof.snippets
+msgid "Airproof"
+msgstr "ایرپروف"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "Airproof Eagle"
+msgstr "ایرپروف ایگل"
+
+#. module: website_airproof
+#: model:product.template,name:website_airproof.product_template_drone_falcon
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "Airproof Falcon"
+msgstr "ایرپروف فالکون"
+
+#. module: website_airproof
+#: model:website.snippet.filter,name:website_airproof.dynamic_filter_airproof_products
+msgid "Airproof Latest Products"
+msgstr "جدیدترین محصولات ایرپروف"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Airproof Ltd"
+msgstr "ایرپروف لیمیتد"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"Airproof Ltd<br/>\n"
+"                                           Rue du Laid Burniat, 5<br/>\n"
+"                                           1348 Ottignies-Louvain-la-Neuve"
+msgstr ""
+"ایرپروف لیمیتد<br/>\n"
+"                                           خیابان لید بورنیات، ۵<br/>\n"
+"                                           ۱۳۴۸ اوتینی-لوون-لا-نوو"
+
+#. module: website_airproof
+#: model:product.template,name:website_airproof.product_template_drone_mini
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+#: model_terms:ir.ui.view,arch_db:website_airproof.product
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "Airproof Mini"
+msgstr "ایرپروف مینی"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.product
+msgid ""
+"Airproof Mini is\n"
+"                                    <span style=\"background-color: rgba(0, 0, 0, 0.08);\">more than just a mini drone.</span><br/>\n"
+"                                    The lightweight body supports powerful features, making it a great choice for first-time flyers."
+msgstr ""
+"ایرپروف مینی\n"
+"                                    <span style=\"background-color: rgba(0, 0, 0, 0.08);\">بیش از یک پهپاد مینی ساده است.</span><br/>\n"
+"                                    بدنه سبک آن ویژگی‌های قدرتمندی را پشتیبانی می‌کند و انتخاب عالی برای پروازکنندگان تازه‌کار است."
+
+#. module: website_airproof
+#: model:product.template,name:website_airproof.product_template_drone_pro
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "Airproof Pro"
+msgstr "ایرپروف پرو"
+
+#. module: website_airproof
+#: model:product.template,name:website_airproof.product_template_drone_robin
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:website.menu,mega_menu_content:website_airproof.menu_drones
+msgid "Airproof Robin"
+msgstr "ایرپروف رابین"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Airproof school"
+msgstr "مدرسه ایرپروف"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Airproof<br/>10 Rue Van Hove<br/>1000 Brussel"
+msgstr "ایرپروف<br/>۱۰ خیابان ون هوف<br/>۱۰۰۰ بروکسل"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Become an expert pilot"
+msgstr "یک خلبان متخصص شوید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "Best drone of the year"
+msgstr "بهترین پهپاد سال"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Cameras"
+msgstr "دوربین‌ها"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.snippets
+msgid "Carousel drone airproof"
+msgstr "کاروسل پهپاد ایرپروف"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Check icon"
+msgstr "آیکون تیک"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Contact details"
+msgstr "اطلاعات تماس"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Contact email"
+msgstr "ایمیل تماس"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Control icon"
+msgstr "آیکون کنترل"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Controllers"
+msgstr "کنترلرها"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid ""
+"Creativity is at the heart of every dream. Every idea, every groundbreaking leap that changes our world starts with the vision of talented creators. At Airproof, we give these creators the tools they need to bring\n"
+"\t\t\t\t\t\t\t\t\t\ttheir ideas to life."
+msgstr ""
+"خلاقیت در قلب هر رویاست. هر ایده و هر جهش پیشگامانه‌ای که دنیای ما را تغییر می‌دهد، از دیدگاه خالقان بااستعداد آغاز می‌شود. در ایرپروف، ابزارهایی را در اختیار این خالقان قرار می‌دهیم که برای زنده کردن\n"
+"\t\t\t\t\t\t\t\t\t\tایده‌هایشان نیاز دارند."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.snippets
+msgid "Custom carousel"
+msgstr "کاروسل سفارشی"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Customize your drone"
+msgstr "پهپاد خود را سفارشی کنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.products
+msgid "Discover our amazing products"
+msgstr "محصولات شگفت‌انگیز ما را کشف کنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "Discover our drones"
+msgstr "پهپادهای ما را کشف کنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_key_benefits_h2
+msgid "Discover our service"
+msgstr "خدمات ما را کشف کنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Don't miss the newsletter with news and special offers!"
+msgstr "خبرنامه با اخبار و پیشنهادهای ویژه را از دست ندهید!"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"Don’t compromise\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\ton video quality"
+msgstr ""
+"روی کیفیت ویدیو\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tسازش نکنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "Drone"
+msgstr "پهپاد"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Drone flying"
+msgstr "پهپاد در حال پرواز"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Drones cases"
+msgstr "کیف پهپاد"
+
+#. module: website_airproof
+#. odoo-javascript
+#: code:addons/website_airproof/static/src/builder/image_shapes_option_plugin.js:0
+msgid "Duo 01"
+msgstr "دوئو ۰۱"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Float kit"
+msgstr "کیت شناور"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "GQ France"
+msgstr "جی‌کیو فرانسه"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Glasses icon"
+msgstr "آیکون عینک"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Immersive Flight"
+msgstr "پرواز همه‌جانبه"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Intuitive Control"
+msgstr "کنترل شهودی"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "One step beyond the horizon | Airproof"
+msgstr "یک قدم فراتر از افق | ایرپروف"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "One step<br/>beyond<br/>the horizon"
+msgstr "یک قدم<br/>فراتر از<br/>افق"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Our accessories"
+msgstr "لوازم جانبی ما"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Our drones"
+msgstr "پهپادهای ما"
+
+#. module: website_airproof
+#: model:website.menu,name:website_airproof.menu_blog_item_1
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+msgid "Our latest news"
+msgstr "آخرین اخبار ما"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Our latest products"
+msgstr "جدیدترین محصولات ما"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid ""
+"Our team will message you back as soon as possible.<br/>\n"
+"                                                                    In the meantime we invite you to visit our"
+msgstr ""
+"تیم ما در اسرع وقت به شما پیام خواهد داد.<br/>\n"
+"                                                                    در این مدت از شما دعوت می‌کنیم از"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Palm-Sized"
+msgstr "به اندازه کف دست"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "Read more"
+msgstr "بیشتر بخوانید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.cta_wrapper
+msgid "Shopping icon"
+msgstr "آیکون خرید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Sign up for our newsletter"
+msgstr "در خبرنامه ما ثبت‌نام کنید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.product
+msgid "Six reasons to buy the Airproof Mini."
+msgstr "شش دلیل برای خرید ایرپروف مینی."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"Small but filled\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\twith advanced features"
+msgstr ""
+"کوچک اما پر\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tاز ویژگی‌های پیشرفته"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"Squeeze the trigger\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tand bolt forward"
+msgstr ""
+"ماشه را فشار دهید\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tو به جلو بشتابید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Stickers"
+msgstr "استیکرها"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Tell us about your issue so we can help you more quickly."
+msgstr "مشکل خود را برای ما بنویسید تا سریع‌تر کمکتان کنیم."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "Thank you for your message"
+msgstr "از پیام شما متشکریم"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"Thanks to our\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tNext Gen Goggles"
+msgstr ""
+"به لطف\n"
+"\t\t\t\t\t\t\t\t\t\t\t<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t\tعینک نسل بعد ما"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "The TikTok Creator's <br/>Dream Drone"
+msgstr "پهپاد رؤیایی <br/>سازندگان تیک‌تاک"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "The dream drone is here"
+msgstr "پهپاد رؤیایی اینجاست"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"This drone offers true vertical video shooting for all your TikTok and "
+"Instagram Reels needs."
+msgstr ""
+"این پهپاد فیلم‌برداری عمودی واقعی را برای تمام نیازهای تیک‌تاک و "
+"ریلز اینستاگرام شما ارائه می‌دهد."
+
+#. module: website_airproof
+#: model:website.menu,name:website_airproof.menu_drones
+#: model_terms:ir.ui.view,arch_db:website_airproof.header
+msgid "Waterproof drones"
+msgstr "پهپادهای ضدآب"
+
+#. module: website_airproof
+#. odoo-javascript
+#: code:addons/website_airproof/static/src/builder/background_shapes_option_plugin.js:0
+msgid "Waves"
+msgstr "امواج"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:website_airproof.s_airproof_carousel
+msgid "We create custom waterproof drones<br/>for professional pilots."
+msgstr "ما پهپادهای ضدآب سفارشی<br/>برای خلبانان حرفه‌ای می‌سازیم."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"We do this through an unparalleled commitment to\n"
+"\t\t\t\t\t\t\t\t\t\t\tR&amp;amp;D, a culture of constant innovation and curiosity,\n"
+"\t\t\t\t\t\t\t\t\t\t\tand a focus on transforming complex technology into\n"
+"\t\t\t\t\t\t\t\t\t\t\teasy-to-use devices."
+msgstr ""
+"این کار را با تعهد بی‌نظیر به\n"
+"\t\t\t\t\t\t\t\t\t\t\tتحقیق و توسعه، فرهنگ نوآوری مداوم و کنجکاوی،\n"
+"\t\t\t\t\t\t\t\t\t\t\tو تمرکز بر تبدیل فناوری پیچیده به\n"
+"\t\t\t\t\t\t\t\t\t\t\tدستگاه‌های آسان برای استفاده انجام می‌دهیم."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.alternative_products
+msgid "You might also like"
+msgstr "ممکن است این‌ها را هم بپسندید"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid ""
+"Your Dynamic Snippet will be displayed here... This message is displayed because you did not provide both a filter and a template to use.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<br/>"
+msgstr ""
+"اسنیپت پویای شما اینجا نمایش داده می‌شود... این پیام به این دلیل است که فیلتر و قالب را همزمان مشخص نکرده‌اید.\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t<br/>"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+msgid "Your email..."
+msgstr "ایمیل شما..."
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.footer
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_contact_ir_ui_view
+msgid "contact@airproof.com"
+msgstr "contact@airproof.com"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.page_home_ir_ui_view
+msgid "drone hold in hand"
+msgstr "پهپاد در دست"
+
+#. module: website_airproof
+#: model_terms:ir.ui.view,arch_db:website_airproof.header_cart_link
+msgid "shopping icon"
+msgstr "آیکون خرید"

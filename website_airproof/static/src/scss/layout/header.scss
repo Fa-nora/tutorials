@@ -10,9 +10,12 @@
     }
 
 
-    #top_menu_collapse .dropdown-toggle::after {
+    header .dropdown-toggle::after {
         content: none !important;
+        display: none !important;
+        border: none !important;
     }
+
 
     // سبد خرید  منو
     .my_cart_quantity,
