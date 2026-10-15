@@ -33,6 +33,11 @@
     <!-- ۴. تزریق خودکار بخش تبلیغاتی شش دلیل به زیر محصول به همراه آرس دقیق استاتیک امواج فیروزه‌ای -->
     <template id="product" inherit_id="website_sale.product" name="Airproof - Product">
         <xpath expr="//section[@id='product_detail']" position="after">
+
+            <div id="oe_structure_layout_airproof_products"
+                 class="oe_structure oe_empty"
+                 data-editor-message="DROP ZONE VISIBLE ACROSS ALL PRODUCTS"/>
+
             <section class="s_text_image o_colored_level pt80 pb80"
                      data-snippet="s_text_image"
                      data-name="Image - Text"
@@ -117,18 +122,71 @@
         </xpath>
     </template>
 
-    <!-- شخصی‌سازی عنوان بخش محصولات پیشنهادی فیکس  -->
-    <template id="alternative_products" inherit_id="website_sale.alternative_products" name="Airproof - Alternative">
-        <xpath expr="//div[@id='oe_structure_website_sale_recommended_products']" position="before">
-            <section class="s_title pt48 pb32 o_colored_level" data-snippet="s_title"
-                     style="background-color: #F5F5F5;"
-                     t-if="product.alternative_product_ids">
-                <div class="container s_allow_columns">
-                    <h2 class="text-center fw-bold text-dark display-6">You might also like</h2>
+
+    <!--  بخش محصولات پیشنهادی خودکار (Automated Dynamic Recommendations)-->
+
+    <template id="airproof_automatic_recommended_products" inherit_id="website_sale.product" name="Airproof - Auto Recommendations">
+        <xpath expr="//section[@id='product_detail']" position="after">
+
+            <!-- سکشن خاکستری و شیک محصولات پیشنهادی منطبق بر طرح اصلی Airproof -->
+            <section class="s_title pt64 pb64 o_colored_level" style="background-color: #E6E7E8;" id="airproof_automatic_recommendations">
+                <div class="container">
+                    <h2 class="text-center fw-bold text-dark display-6 mb-5">You might also like</h2>
+
+                    <div class="row g-4">
+                        <!-- جستجوی هوشمند پایتونی: واکشی خودکار ۴ محصول مرتبط هم‌دسته که محصول فعلی نیستند -->
+                        <t t-set="recommended_products" t-value="request.env['product.template'].sudo().search([
+                            ('id', '!=', product.id),
+                            ('sale_ok', '=', True),
+                            ('website_published', '=', True),
+                            ('public_categ_ids', 'in', product.public_categ_ids.ids)
+                        ], limit=4)"/>
+
+                        <!-- حلقه تکرار برای رندر کردن تک‌تک کارت‌های پهپادهای پیشنهادی -->
+                        <t t-foreach="recommended_products" t-as="recommended">
+                            <div class="col-6 col-md-3">
+                                <a t-att-href="recommended.website_url" class="text-decoration-none text-dark d-block h-100">
+
+                                    <!-- کادر سفید کارت محصول مطابق کارت‌های صفحه شاپ شما -->
+                                    <div class="o_carousel_product_card card h-100 border-0 shadow-sm" style="border-radius: 16px; overflow: hidden; background: #ffffff;">
+
+                                        <!-- بارگذاری ایمن آدرس تصویر محصول از دیتابیس اودو ۱۹ -->
+                                        <div class="d-block bg-white text-center p-3" style="height: 180px;">
+                                            <img t-att-src="request.website.image_url(recommended, 'image_512')"
+                                                 t-att-alt="recommended.name"
+                                                 class="card-img-top h-100"
+                                                 style="object-fit: contain; max-height: 100%;"
+                                                 loading="lazy"/>
+                                        </div>
+
+                                        <!-- مشخصات متنی کالا هم‌تراز شده درون کادر سفید -->
+                                        <div class="card-body text-center p-3 d-flex flex-column justify-content-between" style="background-color: #ffffff;">
+                                            <div>
+                                                <div class="h6 card-title mb-1 fw-bold text-dark" t-out="recommended.name"/>
+                                                <div class="product_price mt-1">
+                                                    <span class="fw-bold text-success" t-field="recommended.list_price"
+                                                          t-options="{'widget': 'monetary', 'display_currency': recommended.currency_id}"/>
+                                                </div>
+                                            </div>
+                                            <div class="pt-2 border-top mt-2">
+                                                <span class="small text-dark fw-bold text-uppercase" style="letter-spacing: 0.5px;">
+                                                    Discover more
+                                                    <img src="/website_airproof/static/src/img/content/icons/arrow-small.svg" alt="" class="ms-1" style="width: 10px; display: inline-block;"/>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </t>
+                    </div>
                 </div>
             </section>
+
         </xpath>
     </template>
+
 
 </odoo>
 

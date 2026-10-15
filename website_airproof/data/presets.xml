@@ -126,12 +126,6 @@
         </record>
 
 
-
-
-
-
-
-
     <!-- دسته‌ها -->
     <record id="cat_drones" model="product.public.category">
         <field name="name">Drones</field>
@@ -173,6 +167,152 @@
     <record id="attr_weight_400" model="product.attribute.value">
         <field name="name">400g</field>
         <field name="attribute_id" ref="attr_weight"/>
+    </record>
+
+
+	 <record id="attr_weight_1000" model="product.attribute.value">
+        <field name="name">1000g</field>
+        <field name="attribute_id" ref="attr_weight"/>
+    </record>
+
+
+
+
+    <!-- فیلتر ویژگی: حداکثر سرعت (Max Speed Attribute & Values)          -->
+
+    <record id="attr_max_speed" model="product.attribute">
+        <field name="name">Max Speed</field>
+        <field name="display_type">radio</field>
+        <field name="create_variant">no_variant</field>
+    </record>
+    <record id="attr_speed_50" model="product.attribute.value">
+        <field name="name">50 km/h</field>
+        <field name="attribute_id" ref="attr_max_speed"/>
+    </record>
+    <record id="attr_speed_80" model="product.attribute.value">
+        <field name="name">80 km/h</field>
+        <field name="attribute_id" ref="attr_max_speed"/>
+    </record>
+    <record id="attr_speed_100" model="product.attribute.value">
+        <field name="name">100 km/h</field>
+        <field name="attribute_id" ref="attr_max_speed"/>
+    </record>
+
+
+    <!-- فیلتر ویژگی: سیستم ارسال ویدیو (Video Transmission System)         -->
+
+    <record id="attr_transmission" model="product.attribute">
+        <field name="name">Video Transmission System</field>
+        <field name="display_type">radio</field>
+        <field name="create_variant">no_variant</field>
+    </record>
+    <record id="attr_trans_o3" model="product.attribute.value">
+        <field name="name">O3 Standard</field>
+        <field name="attribute_id" ref="attr_transmission"/>
+    </record>
+    <record id="attr_trans_o4" model="product.attribute.value">
+        <field name="name">O4 Pro HD</field>
+        <field name="attribute_id" ref="attr_transmission"/>
+    </record>
+
+
+    <!-- فیلتر ویژگی: کیفیت دوربین (Camera Attribute & Values)            -->
+
+    <record id="attr_camera" model="product.attribute">
+        <field name="name">Camera</field>
+        <field name="display_type">radio</field>
+        <field name="create_variant">no_variant</field>
+    </record>
+    <record id="attr_cam_4k" model="product.attribute.value">
+        <field name="name">4K Ultra HD</field>
+        <field name="attribute_id" ref="attr_camera"/>
+    </record>
+    <record id="attr_cam_8k" model="product.attribute.value">
+        <field name="name">8K Professional</field>
+        <field name="attribute_id" ref="attr_camera"/>
+    </record>
+
+
+    <!-- تعریف محصولات نمونه و اتصال خودکار به ویژگی‌ها و دسته‌ها          -->
+
+
+    <!-- ۱. محصول پهپاد مینی (Airproof Mini) -->
+    <record id="product_airproof_mini" model="product.template">
+        <field name="name">Airproof Mini</field>
+        <field name="list_price">150.00</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('cat_drones'), ref('cat_camera_drones')])]"/>
+        <field name="website_published">True</field>
+        <field name="image_1920" type="base64" file="website_airproof/static/src/img/content/airproof-mini.webp"/>
+    </record>
+
+    <!-- ۲. محصول پهپاد رابین (Airproof Robin) -->
+    <record id="product_airproof_robin" model="product.template">
+        <field name="name">Airproof Robin</field>
+        <field name="list_price">250.00</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('cat_drones'), ref('cat_waterproof_drones')])]"/>
+        <field name="website_published">True</field>
+        <field name="image_1920" type="base64" file="website_airproof/static/src/img/content/airproof-robin.webp"/>
+    </record>
+
+    <!-- ۳. محصول پهپاد فالکون (Airproof Falcon) -->
+    <record id="product_airproof_falcon" model="product.template">
+        <field name="name">Airproof Falcon</field>
+        <field name="list_price">350.00</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('cat_drones'), ref('cat_camera_drones')])]"/>
+        <field name="website_published">True</field>
+        <field name="image_1920" type="base64" file="website_airproof/static/src/img/content/airproof-falcon.webp"/>
+    </record>
+
+    <!-- ۴. محصول پهپاد ایگل (Airproof Eagle) -->
+    <record id="product_airproof_eagle" model="product.template">
+        <field name="name">Airproof Eagle</field>
+        <field name="list_price">450.00</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('cat_drones'), ref('cat_waterproof_drones')])]"/>
+        <field name="website_published">True</field>
+        <field name="image_1920" type="base64" file="website_airproof/static/src/img/content/airproof-eagle.webp"/>
+    </record>
+
+
+
+	    <!-- ۵. محصول پهپاد پرو (Airproof Pro) به همراه بارگذاری کدی تصویر فیزیکی -->
+    <record id="product_airproof_pro" model="product.template">
+        <field name="name">Airproof Pro</field>
+        <field name="list_price">200.00</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('cat_drones'), ref('cat_waterproof_drones')])]"/>
+        <field name="website_published">True</field>
+        <!-- لود خودکار فایل تصویر فیزیکی پهپاد پرو از پوشه تصاویر ماژول شما -->
+        <field name="image_1920" type="base64" file="website_airproof/static/src/img/content/airproof-pro.webp"/>
+    </record>
+
+
+
+    <!-- ایجاد خطوط صفات (Attribute Lines) برای نمایش فیلترها در سایدبار -->
+
+
+    <!-- اتصال ویژگی‌های فیلتر به پهپاد رابین -->
+    <record id="line_robin_weight" model="product.template.attribute.line">
+        <field name="product_tmpl_id" ref="product_airproof_robin"/>
+        <field name="attribute_id" ref="attr_weight"/>
+        <field name="value_ids" eval="[(6, 0, [ref('attr_weight_200')])]"/>
+    </record>
+
+    <record id="line_robin_speed" model="product.template.attribute.line">
+        <field name="product_tmpl_id" ref="product_airproof_robin"/>
+        <field name="attribute_id" ref="attr_max_speed"/>
+        <field name="value_ids" eval="[(6, 0, [ref('attr_speed_80')])]"/>
+    </record>
+
+    <!-- اتصال ویژگی‌های فیلتر به پهپاد پرو -->
+    <record id="line_pro_speed" model="product.template.attribute.line">
+        <field name="product_tmpl_id" ref="product_airproof_mini"/>
+        <field name="attribute_id" ref="attr_max_speed"/>
+        <field name="value_ids" eval="[(6, 0, [ref('attr_speed_100')])]"/>
+    </record>
+
+    <record id="line_pro_camera" model="product.template.attribute.line">
+        <field name="product_tmpl_id" ref="product_airproof_mini"/>
+        <field name="attribute_id" ref="attr_camera"/>
+        <field name="value_ids" eval="[(6, 0, [ref('attr_cam_8k')])]"/>
     </record>
 
 

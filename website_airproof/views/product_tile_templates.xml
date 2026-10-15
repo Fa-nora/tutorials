@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Add "Discover more" link on the product card -->
+     <!-- اصلاح گام‌به‌گام و کدی ساختار کارت محصول در  -->
     <template id="products_item" inherit_id="website_sale.products_item" name="Airproof - Products item">
-        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="inside">
-            <span class="o_airproof_discover_more small text-dark pt-3 pb-1 d-block">Discover more
-                <img src="/web/image/website_airproof.img_arrow_small" alt="" class="ms-2"/>
+        <!-- یافتن کادر اصلی اطلاعات متنی محصول درون قالب بومی اودو -->
+        <xpath expr="//div[contains(@class, 'o_wsale_product_information_text')]" position="inside">
+            <!-- تزریق تگ با  تم جهت اعمال کدهای SCSS فلکس‌باکس -->
+            <span class="o_airproof_discover_more small text-dark pt-3 pb-1 d-block fw-bold text-uppercase">
+                Discover more
+                <img src="/web/image/website_airproof.img_arrow_small" alt="" class="ms-2" style="width: 10px; display: inline-block;"/>
             </span>
         </xpath>
     </template>
+
 </odoo>
